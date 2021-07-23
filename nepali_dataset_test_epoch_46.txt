@@ -1,0 +1,1897 @@
+Transformer(
+  (encoder): Encoder(
+    (dropout): Dropout(p=0.1, inplace=False)
+    (input_linear): Linear(in_features=5120, out_features=512, bias=True)
+    (layer_norm_input): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    (positional_encoding): PositionalEncoding()
+    (layers): ModuleList(
+      (0): EncoderLayer(
+        (self_attn): MultiHeadAttention(
+          (query_linear): Linear(in_features=512, out_features=512, bias=True)
+          (key_linear): Linear(in_features=512, out_features=512, bias=True)
+          (value_linear): Linear(in_features=512, out_features=512, bias=True)
+          (attention): ScaledDotProductAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (softmax): Softmax(dim=2)
+          )
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (output_linear): Linear(in_features=512, out_features=512, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (pos_ffn): PositionwiseFeedForwardWithConv(
+          (conv_1): Conv1d(512, 2048, kernel_size=(1,), stride=(1,))
+          (conv_2): Conv1d(2048, 512, kernel_size=(1,), stride=(1,))
+          (dropout): Dropout(p=0.1, inplace=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (1): EncoderLayer(
+        (self_attn): MultiHeadAttention(
+          (query_linear): Linear(in_features=512, out_features=512, bias=True)
+          (key_linear): Linear(in_features=512, out_features=512, bias=True)
+          (value_linear): Linear(in_features=512, out_features=512, bias=True)
+          (attention): ScaledDotProductAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (softmax): Softmax(dim=2)
+          )
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (output_linear): Linear(in_features=512, out_features=512, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (pos_ffn): PositionwiseFeedForwardWithConv(
+          (conv_1): Conv1d(512, 2048, kernel_size=(1,), stride=(1,))
+          (conv_2): Conv1d(2048, 512, kernel_size=(1,), stride=(1,))
+          (dropout): Dropout(p=0.1, inplace=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (2): EncoderLayer(
+        (self_attn): MultiHeadAttention(
+          (query_linear): Linear(in_features=512, out_features=512, bias=True)
+          (key_linear): Linear(in_features=512, out_features=512, bias=True)
+          (value_linear): Linear(in_features=512, out_features=512, bias=True)
+          (attention): ScaledDotProductAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (softmax): Softmax(dim=2)
+          )
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (output_linear): Linear(in_features=512, out_features=512, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (pos_ffn): PositionwiseFeedForwardWithConv(
+          (conv_1): Conv1d(512, 2048, kernel_size=(1,), stride=(1,))
+          (conv_2): Conv1d(2048, 512, kernel_size=(1,), stride=(1,))
+          (dropout): Dropout(p=0.1, inplace=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (3): EncoderLayer(
+        (self_attn): MultiHeadAttention(
+          (query_linear): Linear(in_features=512, out_features=512, bias=True)
+          (key_linear): Linear(in_features=512, out_features=512, bias=True)
+          (value_linear): Linear(in_features=512, out_features=512, bias=True)
+          (attention): ScaledDotProductAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (softmax): Softmax(dim=2)
+          )
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (output_linear): Linear(in_features=512, out_features=512, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (pos_ffn): PositionwiseFeedForwardWithConv(
+          (conv_1): Conv1d(512, 2048, kernel_size=(1,), stride=(1,))
+          (conv_2): Conv1d(2048, 512, kernel_size=(1,), stride=(1,))
+          (dropout): Dropout(p=0.1, inplace=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+  )
+  (decoder): Decoder(
+    (trg_embedding): Embedding(134, 512, padding_idx=0)
+    (positional_encoding): PositionalEncoding()
+    (dropout): Dropout(p=0.1, inplace=False)
+    (layers): ModuleList(
+      (0): DecoderLayer(
+        (self_attn): MultiHeadAttention(
+          (query_linear): Linear(in_features=512, out_features=512, bias=True)
+          (key_linear): Linear(in_features=512, out_features=512, bias=True)
+          (value_linear): Linear(in_features=512, out_features=512, bias=True)
+          (attention): ScaledDotProductAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (softmax): Softmax(dim=2)
+          )
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (output_linear): Linear(in_features=512, out_features=512, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (encoder_attn): MultiHeadAttention(
+          (query_linear): Linear(in_features=512, out_features=512, bias=True)
+          (key_linear): Linear(in_features=512, out_features=512, bias=True)
+          (value_linear): Linear(in_features=512, out_features=512, bias=True)
+          (attention): ScaledDotProductAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (softmax): Softmax(dim=2)
+          )
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (output_linear): Linear(in_features=512, out_features=512, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (pos_ffn): PositionwiseFeedForwardWithConv(
+          (conv_1): Conv1d(512, 2048, kernel_size=(1,), stride=(1,))
+          (conv_2): Conv1d(2048, 512, kernel_size=(1,), stride=(1,))
+          (dropout): Dropout(p=0.1, inplace=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (1): DecoderLayer(
+        (self_attn): MultiHeadAttention(
+          (query_linear): Linear(in_features=512, out_features=512, bias=True)
+          (key_linear): Linear(in_features=512, out_features=512, bias=True)
+          (value_linear): Linear(in_features=512, out_features=512, bias=True)
+          (attention): ScaledDotProductAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (softmax): Softmax(dim=2)
+          )
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (output_linear): Linear(in_features=512, out_features=512, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (encoder_attn): MultiHeadAttention(
+          (query_linear): Linear(in_features=512, out_features=512, bias=True)
+          (key_linear): Linear(in_features=512, out_features=512, bias=True)
+          (value_linear): Linear(in_features=512, out_features=512, bias=True)
+          (attention): ScaledDotProductAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (softmax): Softmax(dim=2)
+          )
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (output_linear): Linear(in_features=512, out_features=512, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (pos_ffn): PositionwiseFeedForwardWithConv(
+          (conv_1): Conv1d(512, 2048, kernel_size=(1,), stride=(1,))
+          (conv_2): Conv1d(2048, 512, kernel_size=(1,), stride=(1,))
+          (dropout): Dropout(p=0.1, inplace=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (2): DecoderLayer(
+        (self_attn): MultiHeadAttention(
+          (query_linear): Linear(in_features=512, out_features=512, bias=True)
+          (key_linear): Linear(in_features=512, out_features=512, bias=True)
+          (value_linear): Linear(in_features=512, out_features=512, bias=True)
+          (attention): ScaledDotProductAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (softmax): Softmax(dim=2)
+          )
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (output_linear): Linear(in_features=512, out_features=512, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (encoder_attn): MultiHeadAttention(
+          (query_linear): Linear(in_features=512, out_features=512, bias=True)
+          (key_linear): Linear(in_features=512, out_features=512, bias=True)
+          (value_linear): Linear(in_features=512, out_features=512, bias=True)
+          (attention): ScaledDotProductAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (softmax): Softmax(dim=2)
+          )
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (output_linear): Linear(in_features=512, out_features=512, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (pos_ffn): PositionwiseFeedForwardWithConv(
+          (conv_1): Conv1d(512, 2048, kernel_size=(1,), stride=(1,))
+          (conv_2): Conv1d(2048, 512, kernel_size=(1,), stride=(1,))
+          (dropout): Dropout(p=0.1, inplace=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (3): DecoderLayer(
+        (self_attn): MultiHeadAttention(
+          (query_linear): Linear(in_features=512, out_features=512, bias=True)
+          (key_linear): Linear(in_features=512, out_features=512, bias=True)
+          (value_linear): Linear(in_features=512, out_features=512, bias=True)
+          (attention): ScaledDotProductAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (softmax): Softmax(dim=2)
+          )
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (output_linear): Linear(in_features=512, out_features=512, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (encoder_attn): MultiHeadAttention(
+          (query_linear): Linear(in_features=512, out_features=512, bias=True)
+          (key_linear): Linear(in_features=512, out_features=512, bias=True)
+          (value_linear): Linear(in_features=512, out_features=512, bias=True)
+          (attention): ScaledDotProductAttention(
+            (dropout): Dropout(p=0.1, inplace=False)
+            (softmax): Softmax(dim=2)
+          )
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (output_linear): Linear(in_features=512, out_features=512, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (pos_ffn): PositionwiseFeedForwardWithConv(
+          (conv_1): Conv1d(512, 2048, kernel_size=(1,), stride=(1,))
+          (conv_2): Conv1d(2048, 512, kernel_size=(1,), stride=(1,))
+          (dropout): Dropout(p=0.1, inplace=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (output_linear): Linear(in_features=512, out_features=134, bias=False)
+  )
+  (conv): Sequential(
+    (0): Conv2d(1, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU()
+    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU()
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): ReLU()
+    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): ReLU()
+    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+)
+Target Transcript अत्तरियाबीचको खेलसमेत वर्षाका
+Predicted Transcript अत्तरियाबीचको खेलसमेत वर्षाका
+--------------------------------------------------
+Target Transcript भनिएको महेन्द्रनगर युनाइटेड र
+Predicted Transcript दोठेन्दै ९ोल्दै गरेको भितेन छ
+--------------------------------------------------
+Target Transcript क्रिकेट प्रतियोगिताअन्तर्गत आज हुने
+Predicted Transcript क्रिकेट प्रतियोगिताअन्तर्गत आज हुने
+--------------------------------------------------
+Target Transcript आजको जितसँगै काठमाडौं लगातार
+Predicted Transcript आजको जितसँगै काठमाडौं लगातार
+--------------------------------------------------
+Target Transcript कारण शनिबार चौराह धनगढी
+Predicted Transcript कारण शनिबार चौराह धनगढी
+--------------------------------------------------
+Target Transcript विराटनगर अंक तालिकाको
+Predicted Transcript विराटनगर अंक तालिकाको
+--------------------------------------------------
+Target Transcript आयोजना गरेको पत्रकार
+Predicted Transcript आयोजना गरेको पत्रकार
+--------------------------------------------------
+Target Transcript प्रगति गर्दै गैरहेको
+Predicted Transcript प्रगति गर्दै गैरहेको
+--------------------------------------------------
+Target Transcript कोहि खेल्न नसक्ने भएमा
+Predicted Transcript कोहि खेल्न नसक्ने भएमा
+--------------------------------------------------
+Target Transcript राम्रो गरिरेहको छ
+Predicted Transcript सार्रो गरिरेहको छ
+--------------------------------------------------
+Target Transcript र काठमाडौंले अंक बाँडे
+Predicted Transcript र काठमाडौंले अंक बाँडे
+--------------------------------------------------
+Target Transcript खुलेर खेल्न सकेनन्
+Predicted Transcript खोले ख्रानले स्निखै
+--------------------------------------------------
+Target Transcript पुरै ओभर खेल्दै
+Predicted Transcript पुरै ओभर खेल्दै
+--------------------------------------------------
+Target Transcript प्लेअफ नजिक पुगेको छ
+Predicted Transcript प्लेअफ नजिक पुगेको छ
+--------------------------------------------------
+Target Transcript पार्दै काठमाडौं गोल्डन्स
+Predicted Transcript काठमाडौं र महेन्दो खेन्स
+--------------------------------------------------
+Target Transcript ४ विकेट लिए
+Predicted Transcript ४ विकेट लिए
+--------------------------------------------------
+Target Transcript ज्ञानेन्द्र मल्लले
+Predicted Transcript ज्ञानेन्द्र मल्लले
+--------------------------------------------------
+Target Transcript जिम्मेवारी लिएको जेठ १३ 
+Predicted Transcript दिनमा गर्ने प्रमुख कार्यहरू 
+--------------------------------------------------
+Target Transcript सार्वजनिक गरिएको हो
+Predicted Transcript सार्वजनिक गरिएको हो
+--------------------------------------------------
+Target Transcript सार्वजनिक गरेको छ
+Predicted Transcript अन्तापको जिंह त्रतार पतरार्ने 
+--------------------------------------------------
+Target Transcript संघीय प्रहरी एकाइ कार्यालय
+Predicted Transcript क्षिमान खार्दै प्रिया
+--------------------------------------------------
+Target Transcript जगतबहादुर विश्वकर्माले जानकारी दिए
+Predicted Transcript जगबबादुर विश्वकर्माले जानकारी दिए
+--------------------------------------------------
+Target Transcript मन्त्री विश्वकर्माले राष्ट्रिय खेलकुद 
+Predicted Transcript मन्त्री विश्वकर्माले ती कार्ययोजना 
+--------------------------------------------------
+Target Transcript अन्तर्राष्ट्रियस्तरको रंगशाला निर्माणका 
+Predicted Transcript अन्तर्राष्ट्रियस्तरको रंगशाला निर्माणका 
+--------------------------------------------------
+Target Transcript सार्वजनिक गर्ने घोषणा पनि गरे
+Predicted Transcript सार्वजा गरेको छ
+--------------------------------------------------
+Target Transcript सन्दीप टिममा पर्ने सम्भावना छ
+Predicted Transcript सन्दीप टिममा पर्ने सम्भावना छ
+--------------------------------------------------
+Target Transcript व्यक्त गरे
+Predicted Transcript त्यसैगरी मन्त्रालयले १३ औँ दक्षिण 
+--------------------------------------------------
+Target Transcript टस जितेर पहिले ब्याटिङ
+Predicted Transcript टस जितेर पहिले ब्याटिङ
+--------------------------------------------------
+Target Transcript दिलिप नाथले ३३ रन बनाउनुबाहेक
+Predicted Transcript दिलिप नाथले ३ रन बनाउनुदाहेक
+--------------------------------------------------
+Target Transcript दर्ता गर्ने क्रममा विराटनगरका
+Predicted Transcript दर्ता गर्ने क्रममा विराटनगरका
+--------------------------------------------------
+Target Transcript आजको जितसँगै काठमाडौं लगातार
+Predicted Transcript आजको जितसँगै काठमाडौं लगातार
+--------------------------------------------------
+Target Transcript यता अत्तरियाको भने तेस्रो
+Predicted Transcript यता अत्तरियाको भने तेस्रो
+--------------------------------------------------
+Target Transcript बढी रन बनाएका शंकर रानाले
+Predicted Transcript बढी रन बनाएका शंकर रानाले
+--------------------------------------------------
+Target Transcript दोस्रो स्थानमा उक्लियो
+Predicted Transcript दोस्रो स्थानमा उक्लियो
+--------------------------------------------------
+Target Transcript व्यक्त गरिएको छ
+Predicted Transcript व्यक्त गरिएको छ
+--------------------------------------------------
+Target Transcript नथाक्ने जोश देखिएको छ
+Predicted Transcript साथान्दो जोले खित रनको
+--------------------------------------------------
+Target Transcript कारण रद्द भएको थियो
+Predicted Transcript कारण रद्द भएको छियो
+--------------------------------------------------
+Target Transcript विराटनगर अंक तालिकाको
+Predicted Transcript विराटनगर अंक तालिकाको
+--------------------------------------------------
+Target Transcript ३ विकेट लिए
+Predicted Transcript ३ विकेट लिए
+--------------------------------------------------
+Target Transcript सबै प्रदेशमा रंगशाला निर्माण 
+Predicted Transcript सबै प्रदेशमा रंगशाला निर्माण 
+--------------------------------------------------
+Target Transcript काठमाडौ गोल्डेन्सले सिवाईसी अत्तरीयालाई
+Predicted Transcript काठमाडौ गोल्ड स्वरू सिवाईसी 
+--------------------------------------------------
+Target Transcript सबै प्रदेशमा रंगशाला निर्माण 
+Predicted Transcript सर्ने प्रतिबद्धता पनि 
+--------------------------------------------------
+Target Transcript सार्वजनिक गर्ने घोषणा पनि गरे
+Predicted Transcript सार्वजनिक गर्ने घोषणा पनि गरे
+--------------------------------------------------
+Target Transcript पाँच बल डट फालेका थिए
+Predicted Transcript अत्चाधिक प्रहार गरिएका थिए
+--------------------------------------------------
+Target Transcript धनगढीको मैदान हिलाम्य भएपछि
+Predicted Transcript धनगढीको मैदान हिलाम्य भएपछि
+--------------------------------------------------
+Target Transcript डीपीएलमा काठमाडौंको लगातार
+Predicted Transcript डीपीएलमा काठमाडौंको लगातातार
+--------------------------------------------------
+Target Transcript गरेको विराटनगरले निर्धारित
+Predicted Transcript गरेको विराटनगरले निर्धारित
+--------------------------------------------------
+Target Transcript एकपटक हङकङका खेलाडी
+Predicted Transcript ११ रनका हङला खेलातिए
+--------------------------------------------------
+Target Transcript मस्यौदा तयार पार्ने पोखरा 
+Predicted Transcript दोन्रो निर्द प्त्ने को
+--------------------------------------------------
+Target Transcript पन्जाबसँग माहोलीमा खेल्दै
+Predicted Transcript अन्जाबार ५ वित्दाले खान्दै
+--------------------------------------------------
+Target Transcript तथा सुनील धमलाले १२
+Predicted Transcript तथा सुनील धमलाले १२
+--------------------------------------------------
+Target Transcript सार्वजनिक गरेको छ
+Predicted Transcript सार्वजनिक गरेको छ
+--------------------------------------------------
+Target Transcript लगातार चौथो जित हात
+Predicted Transcript दोगार चौथो जित हात्र
+--------------------------------------------------
+Target Transcript २५ रन जोडेका थिए भने
+Predicted Transcript २२ रन खाथले थिएको हो
+--------------------------------------------------
+Target Transcript ६८ रनको पारी खेले
+Predicted Transcript ६८ रनको पारी खेले
+--------------------------------------------------
+Target Transcript उल्लेख गरिएको छ 
+Predicted Transcript उल्लेख गरिएको छ 
+--------------------------------------------------
+Target Transcript बलिङ तर्फ
+Predicted Transcript बलिङ गर्फ
+--------------------------------------------------
+Target Transcript जगतबहादुर विश्वकर्माले जानकारी दिए
+Predicted Transcript जगबबादुर विश्वकर्माले जानकारी दिए
+--------------------------------------------------
+Target Transcript जगतबहादुर विश्वकर्माले जानकारी दिए
+Predicted Transcript जनताप्रति जवाफदेही हुने 
+--------------------------------------------------
+Target Transcript मन्त्रालयले १०० दिनभित्र 
+Predicted Transcript मन्त्रालयले १०० दिनभित्र 
+--------------------------------------------------
+Target Transcript जोड्दै शीर्ष स्थानमा यथावत छ
+Predicted Transcript जोड्दै शीर्ष स्थानमा यथावत छ
+--------------------------------------------------
+Target Transcript विराटनगरका बसन्त रेग्मी र
+Predicted Transcript विराटनगरका बसन्त रेग्मी र
+--------------------------------------------------
+Target Transcript १८ रनले हराउने क्रमा
+Predicted Transcript १८ रनले हराउने क्रमा
+--------------------------------------------------
+Target Transcript धनगढीलाई सस्तैमा समेट्ने
+Predicted Transcript धनगढीलाई सस्तैमा समेट्ने
+--------------------------------------------------
+Target Transcript सार्वजनिक गरिएको हो
+Predicted Transcript सार्वजनिक गरेको छ
+--------------------------------------------------
+Target Transcript कामलाई द्रुत गतिमा अघि 
+Predicted Transcript कामलाई द्रुत गतिमा अघि 
+--------------------------------------------------
+Target Transcript लगेका कारण टिममा पर्ने
+Predicted Transcript गेगेका कारण टिमा पर्ने
+--------------------------------------------------
+Target Transcript २ जितसहित ४ अंक जोडेको
+Predicted Transcript २ जितसहित ४ अंक जोडेको
+--------------------------------------------------
+Target Transcript २२ विकेट हात पारे
+Predicted Transcript २२ विकेट हात पार्कारेका हार
+--------------------------------------------------
+Target Transcript खेलमा दोस्रो पराजय हो
+Predicted Transcript खेलमा दोस्रो पराजय हो
+--------------------------------------------------
+Target Transcript रहेको बताएका हुन्
+Predicted Transcript रहेको बताएका हुन्
+--------------------------------------------------
+Target Transcript क्रिकेटका लागि लेग
+Predicted Transcript क्षिकेटका लागि लेग
+--------------------------------------------------
+Target Transcript युवा छ अभ्यासमा
+Predicted Transcript युवा छ अभ्यासमा
+--------------------------------------------------
+Target Transcript दिल्ली डेयरडेभिल्सले बिहिबार
+Predicted Transcript दिल्ली डेयरडेभिल्सले बिहिबार
+--------------------------------------------------
+Target Transcript धनगढी प्रिमियर लिगमा
+Predicted Transcript धनगढी प्रिमियर लिग क्रिकेट
+--------------------------------------------------
+Target Transcript उसका लागि कप्तान
+Predicted Transcript उसका लागि कप्तान
+--------------------------------------------------
+Target Transcript विवरण जेठ १७ गते 
+Predicted Transcript विवरण जेठ १७ गते 
+--------------------------------------------------
+Target Transcript ४ विकेट लिए
+Predicted Transcript सानले ११ विकेट हित
+--------------------------------------------------
+Target Transcript अनुसारको कामहरूको प्रगति 
+Predicted Transcript अनुसारको कामहरूको प्रगति 
+--------------------------------------------------
+Target Transcript अघि बढाउने प्रतिबद्धता 
+Predicted Transcript अघि बाउउने प्रतिबद्धता 
+--------------------------------------------------
+Target Transcript तथा सुबोध भातीले १० रन जोडे
+Predicted Transcript तथा सुनील धमलाले १२
+--------------------------------------------------
+Target Transcript बलिङ तर्फ अत्तरीयाका शिवसंकर उराले
+Predicted Transcript बलिङ तर्फ अत्तरीयाका शिवसंकर उराले
+--------------------------------------------------
+Target Transcript प्रतियोगिताको प्ले अफमा पुगिसकेका छन्
+Predicted Transcript प्रतियोगिताको सुरुवात गर्नेछ
+--------------------------------------------------
+Target Transcript २० ओभरमा ८ विकेट गुमाउदै
+Predicted Transcript २० ओभरमा ८ विकेट गुमाउदै
+--------------------------------------------------
+Target Transcript ब्याटिङ गर्दै १० बलमा
+Predicted Transcript ब्याटिङ गर्दै १० बलमा
+--------------------------------------------------
+Target Transcript खड्काले ८ रनको योगदान गरे
+Predicted Transcript खड्काले ८ रनको योगदान गरे
+--------------------------------------------------
+Target Transcript २५ रन जोडेका थिए भने
+Predicted Transcript २न्दीप जोथ राजले हुने
+--------------------------------------------------
+Target Transcript सबै प्रदेशमा रंगशाला निर्माण 
+Predicted Transcript सबै प्रदेशमा रंगशाला निर्माण 
+--------------------------------------------------
+Target Transcript अन्तिम खेल स्थगन गरिएको
+Predicted Transcript अन्तिम खेल स्थगन गरिएको
+--------------------------------------------------
+Target Transcript निर्माण कार्य सुरू गर्ने 
+Predicted Transcript निर्माण कार्य सुरू गर्ने 
+--------------------------------------------------
+Target Transcript अन्तिम ओभरमा स्ट्राइकमा रहेका
+Predicted Transcript अन्तिम ओभरमा स्ट्राइकमा रहेका
+--------------------------------------------------
+Target Transcript योगदान दिँदा कमलसिंह ऐरी
+Predicted Transcript योगदान दिँदा तलस्दार दितानले
+--------------------------------------------------
+Target Transcript अघि बढाउने प्रतिबद्धता 
+Predicted Transcript अघि बाउउने प्रतिबद्धता 
+--------------------------------------------------
+Target Transcript विपन चन्द्रले १ छक्का
+Predicted Transcript काति खान्दले १ रन खा
+--------------------------------------------------
+Target Transcript गरेको काठमाडौंले ९ विकेटको
+Predicted Transcript गरेको काठमाडौंले ९ विकेटको
+--------------------------------------------------
+Target Transcript रन बनाएर काठमाडौंलाई
+Predicted Transcript रन बनाएर काठमाडौंलाई
+--------------------------------------------------
+Target Transcript २२ विकेट हात पारे
+Predicted Transcript २२ विकेट हात हारे
+--------------------------------------------------
+Target Transcript मस्यौदा तयार पार्ने पोखरा 
+Predicted Transcript मस्यौदा तयार पार्ने पोखरा 
+--------------------------------------------------
+Target Transcript जनताप्रति जवाफदेही हुने 
+Predicted Transcript जनताप्रति जवाफदेही हुने 
+--------------------------------------------------
+Target Transcript जनताप्रति जवाफदेही हुने 
+Predicted Transcript जनताप्रति जवाफदेही हुने 
+--------------------------------------------------
+Target Transcript महेन्द्रनगर युनाइटेडको अंक ६ भएको छ
+Predicted Transcript मेन्दै काठमाने अर्य सकेटनको छ
+--------------------------------------------------
+Target Transcript कार्ययोजनामा काठमाडौं उपत्यकाभित्र 
+Predicted Transcript कार्ययोजनामा काठमाडौं उपत्यकाभित्र 
+--------------------------------------------------
+Target Transcript विराटनगरका बसन्त रेग्मीले २
+Predicted Transcript विराटनगरका जसन्त रेग्मी र
+--------------------------------------------------
+Target Transcript यस्तै ओपनर अनिलकुमार साहले
+Predicted Transcript यस्तै सन्नर अनकुटारले बलाफले
+--------------------------------------------------
+Target Transcript विराटनगरको लगातार दोस्रो जित
+Predicted Transcript काठमाडौंको लगातार चौथो जित
+--------------------------------------------------
+Target Transcript किंग्स र सिवाइसी अत्तरियाबीच हुनेछ
+Predicted Transcript कोग्सान सिंवाइसी अत्तरियाबीच हुनेछ
+--------------------------------------------------
+Target Transcript विराटनगर अंक तालिकाको
+Predicted Transcript विराटनगरको लगातार दोस्रो जित
+--------------------------------------------------
+Target Transcript कोहि खेल्न नसक्ने भएमा
+Predicted Transcript उनी सहि विकल्प हुने बताए
+--------------------------------------------------
+Target Transcript खड्काले ८ रनको योगदान गरे
+Predicted Transcript खड्काले ८ रनको योगदान गरे
+--------------------------------------------------
+Target Transcript पर्ने सम्भावना रहेको दिल्ली
+Predicted Transcript पर्ने सम्भावना रहेको
+--------------------------------------------------
+Target Transcript प्रगति गर्दै गैरहेको
+Predicted Transcript प्रगति गर्दै गैरहेको
+--------------------------------------------------
+Target Transcript ३४ बल खेलेका उनले
+Predicted Transcript पान ख खेलेका उनिए
+--------------------------------------------------
+Target Transcript सन्दीप जोराले २१ रन
+Predicted Transcript सन्दीप जोराले २१ रन
+--------------------------------------------------
+Target Transcript बिहीबार भएको खेलमा घरेलु
+Predicted Transcript बिहीबार भएको खेलमा घररण
+--------------------------------------------------
+Target Transcript सय दिने कार्ययोजना 
+Predicted Transcript सय दिने कार्ययोजना 
+--------------------------------------------------
+Target Transcript बढाउने योजना पनि 
+Predicted Transcript बढाउने योजना पनि 
+--------------------------------------------------
+Target Transcript धनगढी प्रिमियर लिग क्रिकेट
+Predicted Transcript धनगढी प्रिमियर लिग क्रिकेट
+--------------------------------------------------
+Target Transcript व्यक्त गरे
+Predicted Transcript व्यकाट गर्दै गैन्दै
+--------------------------------------------------
+Target Transcript छ उनले भने
+Predicted Transcript छ उनले भने
+--------------------------------------------------
+Target Transcript जिम्मेवारी लिएको जेठ १३ 
+Predicted Transcript दिनमा गर्ने प्रमुख कार्यहरू 
+--------------------------------------------------
+Target Transcript महेन्द्रनगर युनाइटेडको अंक ६ भएको छ
+Predicted Transcript मेन्दै काठमाने अर्य सकेटनको छ
+--------------------------------------------------
+Target Transcript १२ वर्षे खेलकुद गुरु योजनाको 
+Predicted Transcript यस्तै सन्नी पट्टेलले बिसाहेट
+--------------------------------------------------
+Target Transcript बाबर हायातले उत्कृष्ट प्रदर्शन गरे
+Predicted Transcript बाबर हायातले उत्कृष्ट प्रदर्शन गरे
+--------------------------------------------------
+Target Transcript तुलसीपुर र इटहरीलाई खेलकुद सहरको 
+Predicted Transcript उन्तीप रुर इट्टाले खेल्टाइच सको 
+--------------------------------------------------
+Target Transcript महेन्द्रनगर युनाइटेडको अंक ६ भएको छ
+Predicted Transcript नगेको काठणले हिल्ष सकेटन्राले
+--------------------------------------------------
+Target Transcript देखिएको विवाद तत्काल समाधान 
+Predicted Transcript सन्दीको लामि सबैजना सम्थानम्
+--------------------------------------------------
+Target Transcript अन्यले राम्रो रन जोड्न सकेनन्
+Predicted Transcript अन्यले राम्रो रन जोड्न सकेनन्
+--------------------------------------------------
+Target Transcript अन्यले राम्रो रन जोड्न सकेनन्
+Predicted Transcript अन्यले राम्रो रन जोड्न सकेनन्
+--------------------------------------------------
+Target Transcript अक्सनबाट २० लाख
+Predicted Transcript अक्सनबाट २० लाख
+--------------------------------------------------
+Target Transcript क्रिकेट प्रतियोगिताअन्तर्गत आज हुने
+Predicted Transcript क्रिकेट प्रतियोगितात हागर्ने 
+--------------------------------------------------
+Target Transcript रन बनाएर काठमाडौंलाई
+Predicted Transcript रन बनाएर काठमाडौंलाई
+--------------------------------------------------
+Target Transcript अन्तिम बलमा ५ विकेटले
+Predicted Transcript अन्तिम बलमा ५ विकेटले
+--------------------------------------------------
+Target Transcript स्पिनर सन्दीप हाल
+Predicted Transcript स्पिनर सन्दीप हाल
+--------------------------------------------------
+Target Transcript २२ विकेट लिएका थिए
+Predicted Transcript दुई विकेट लिएका थिए
+--------------------------------------------------
+Target Transcript कृष्ण कार्की १ रनमै
+Predicted Transcript कृष्ण कार्की १ रनमै
+--------------------------------------------------
+Target Transcript धनगढी प्रिमियर लिगमा
+Predicted Transcript धनगढी प्रिमियर लिग क्रिकेट
+--------------------------------------------------
+Target Transcript क्रममा पवनले सर्वाधिक
+Predicted Transcript अनलममा पवनले सर्वाधिक
+--------------------------------------------------
+Target Transcript र प्रेम तामाङ
+Predicted Transcript र प्रेम तामाङ
+--------------------------------------------------
+Target Transcript २ रनमा आउट भए
+Predicted Transcript २५ रन बनाए भने
+--------------------------------------------------
+Target Transcript व्यक्त गरे
+Predicted Transcript अन्तर्षे गरेको छ
+--------------------------------------------------
+Target Transcript एक एक अंक बाँडेका छन्
+Predicted Transcript काठमान खानले १ रनमा
+--------------------------------------------------
+Target Transcript दिएको १ सय २८ रनको
+Predicted Transcript दीएको १ सयो २८ रनको
+--------------------------------------------------
+Target Transcript भारतीय रुपैयाँमा किनेको थियो
+Predicted Transcript भारतीय रुपैयाँमा किनेको थियो
+--------------------------------------------------
+Target Transcript सन्दीप टिममा पर्ने सम्भावना छ
+Predicted Transcript सन्दीप टिममा पर्ने सम्भावना छ
+--------------------------------------------------
+Target Transcript किंग्स र सिवाइसी अत्तरियाबीच हुनेछ
+Predicted Transcript कोग्सान सिंवाइसी अत्तरियाबीच हुनेछ
+--------------------------------------------------
+Target Transcript अस्पतालको निर्माण कार्य सुरू 
+Predicted Transcript अस्पतालको निर्माण कार्य सुरू 
+--------------------------------------------------
+Target Transcript सम्मेलनमा सन्दीपबारे प्रशिक्षक
+Predicted Transcript सम्मेलनमा सन्दीपबारे प्रशिक्षक
+--------------------------------------------------
+Target Transcript रूपमा विकास गर्नका लागि 
+Predicted Transcript रूपमा विकास गर्नका लागि 
+--------------------------------------------------
+Target Transcript शुभम् कामतले १ विकेट लिए
+Predicted Transcript शथान ११ विकेट लिए
+--------------------------------------------------
+Target Transcript कामलाई द्रुत गतिमा अघि 
+Predicted Transcript कामलाई द्रुत गतिमा अघि 
+--------------------------------------------------
+Target Transcript समान २२ विकेट हात पारे
+Predicted Transcript समान २२ विकेट हात पारे
+--------------------------------------------------
+Target Transcript पछि विराटनगर मध्यम स्कोर
+Predicted Transcript पछि विराटनगर म्यम स्योर
+--------------------------------------------------
+Target Transcript दुई विकेट लिएका थिए
+Predicted Transcript दुई विकेट लिएका थिए
+--------------------------------------------------
+Target Transcript सन्दीपलाई दिल्लीले
+Predicted Transcript सन्दीपलाई दिल्लीले
+--------------------------------------------------
+Target Transcript आजको जितसँगै तीन खेलमा
+Predicted Transcript आजको जितसँगै तीन खेलमा
+--------------------------------------------------
+Target Transcript प्रशिक्षक रिकी पोन्टिङ
+Predicted Transcript प्रशिक्षक रिकी पोन्टिङ
+--------------------------------------------------
+Target Transcript सक्ने सम्भावना रहेको
+Predicted Transcript सक्ने सम्भावना रहेको
+--------------------------------------------------
+Target Transcript जित नजिक पुर्याए
+Predicted Transcript जित नजिक पुर्याए
+--------------------------------------------------
+Target Transcript बनाएको थियो
+Predicted Transcript बनाएको थियो
+--------------------------------------------------
+Target Transcript चाहिएको बेला उचित
+Predicted Transcript चाहिएको बेला उचित
+--------------------------------------------------
+Target Transcript क्रिकेट प्रतियोगिताअन्तर्गत आज हुने
+Predicted Transcript क्रिकेट प्रतियोगिताअन्तर्गत आज हुने
+--------------------------------------------------
+Target Transcript किंग्स र सिवाइसी अत्तरियाबीच हुनेछ
+Predicted Transcript किंग्स र सिवाइसी अत्तरियाबीच हुनेछ
+--------------------------------------------------
+Target Transcript विराटनगरले दिएको १६५ रनको
+Predicted Transcript विराटनगरले दिएको १६५ रनको
+--------------------------------------------------
+Target Transcript विवरण जेठ १७ गते 
+Predicted Transcript विराटनगर ५ विकेटले पराजित
+--------------------------------------------------
+Target Transcript अत्तरियाका गौरव चितकारले
+Predicted Transcript अत्तरियाका गौरव चितकारले
+--------------------------------------------------
+Target Transcript युवा तथा खेलकुद मन्त्रालयले
+Predicted Transcript युवा तथा खेलकुद मन्त्रालयले 
+--------------------------------------------------
+Target Transcript अन्तिम ओभरमा स्ट्राइकमा रहेका
+Predicted Transcript अन्तिम ओभरमा स्ट्राइकमा रहेका
+--------------------------------------------------
+Target Transcript धनगढीका लागि सबैभन्दा
+Predicted Transcript धनगढीका लागि सबैभन्दा
+--------------------------------------------------
+Target Transcript आयोजना गरेको पत्रकार
+Predicted Transcript आयोजना गरेको पत्रकार
+--------------------------------------------------
+Target Transcript खेलबाट सतप्रतिशत अंक
+Predicted Transcript खेलबाट सतप्रतिशत अंक
+--------------------------------------------------
+Target Transcript सार्वजनिक गरेको छ
+Predicted Transcript सार्वजनिक गरेको छ
+--------------------------------------------------
+Target Transcript २२ विकेट लिएका थिए
+Predicted Transcript २२ विकेट लिएका थिए
+--------------------------------------------------
+Target Transcript पृथु बाँस्कोटा ३ तथा
+Predicted Transcript पृथु बाँस्कोटा ३ तथा
+--------------------------------------------------
+Target Transcript बनाएर आउट भए भने
+Predicted Transcript बनाएको आउट भए भनि
+--------------------------------------------------
+Target Transcript ४ रनमा आउट भए
+Predicted Transcript ४ रनमा आउट भए
+--------------------------------------------------
+Target Transcript ४ रनमा आउट भए
+Predicted Transcript ४ रनमा आउट भए
+--------------------------------------------------
+Target Transcript नीतिको आवश्यक परिमार्जन गर्ने 
+Predicted Transcript नीतिको आवश्यक परिमार्जन गर्ने 
+--------------------------------------------------
+Target Transcript मन्त्री विश्वकर्माले मन्त्रालयको 
+Predicted Transcript मन्त्री विश्वकर्माले मन्त्रालयको 
+--------------------------------------------------
+Target Transcript तेस्रो जित
+Predicted Transcript १० रन्दात
+--------------------------------------------------
+Target Transcript गरी काम गर्न सय 
+Predicted Transcript दिने सम्योशना सार्वज गराउनेछ
+--------------------------------------------------
+Target Transcript सम्मेलन गरी आफ्नो १०० 
+Predicted Transcript मार्दे निर्दाण लागिएको ज्नाण 
+--------------------------------------------------
+Target Transcript सर्वाधि ५७ रन बनाएका थिए
+Predicted Transcript सर्वाधिक ४१ रन जोडेका थिए
+--------------------------------------------------
+Target Transcript २० ओभरमा ८ विकेट गुमाउदै
+Predicted Transcript २० ओभरमा ८ विकेट गुमाउदै
+--------------------------------------------------
+Target Transcript समान ११ विकेट लिए
+Predicted Transcript समान ११ विकेट हात पारे
+--------------------------------------------------
+Target Transcript आजको जितसँगै काठमाडौं लगातार
+Predicted Transcript आजको जितसँगै काठमाडौं लगातार
+--------------------------------------------------
+Target Transcript विराटनगर अंक तालिकाको
+Predicted Transcript विराटनगरको लगातार दोस्रो जित
+--------------------------------------------------
+Target Transcript शेखले ११ विकेट लिए
+Predicted Transcript शेखले ११ विकेट लिए
+--------------------------------------------------
+Target Transcript क्रिकेट प्रतियोगिताअन्तर्गत आज हुने
+Predicted Transcript क्रिकेट प्रतियोगितात हागर्ने 
+--------------------------------------------------
+Target Transcript बाबर ह्यायत १५ रन
+Predicted Transcript बाबर ह्यायत १५ रन
+--------------------------------------------------
+Target Transcript सन्दिपको टोली दिल्लीले
+Predicted Transcript सन्दिपको टोली दिल्लीले
+--------------------------------------------------
+Target Transcript सन्दीप जोराले २१ रन
+Predicted Transcript सन्दीप जोराले २१ रन
+--------------------------------------------------
+Target Transcript सनि पटेल र रासिद खानले
+Predicted Transcript सन खिप खेल रासिद खानले
+--------------------------------------------------
+Target Transcript पनि तय गरेको छ
+Predicted Transcript पनि तय गरेको छ
+--------------------------------------------------
+Target Transcript आयोजना गरेको पत्रकार
+Predicted Transcript आयोजना गरेको पत्रकार
+--------------------------------------------------
+Target Transcript सनि पटेल र रासिद खानले
+Predicted Transcript सन पटटेल र रासिद खानले
+--------------------------------------------------
+Target Transcript दोस्रो स्थानमा उक्लिएको छ
+Predicted Transcript दोस्रो स्थानमा उक्लिएको छ
+--------------------------------------------------
+Target Transcript बलिङ तर्फ
+Predicted Transcript बलिङ गर्न सक्ने 
+--------------------------------------------------
+Target Transcript कप्तान पारस खड्का
+Predicted Transcript १सका लागि कप्तान ख्का
+--------------------------------------------------
+Target Transcript मैदान निर्माणका लागि जग्गासम्बन्धी 
+Predicted Transcript मैदान निर्माणका लागि जग्गासम्बन्धी 
+--------------------------------------------------
+Target Transcript मस्यौदा तयार पार्ने पोखरा 
+Predicted Transcript मन्त्री विश्वकर्माले ती कार्ययोजना 
+--------------------------------------------------
+Target Transcript सर्वाधि ५७ रन बनाएका थिए
+Predicted Transcript सर्वाधिक ४१ रन जोडेका थिए
+--------------------------------------------------
+Target Transcript बाबर हायातले उत्कृष्ट प्रदर्शन गरे
+Predicted Transcript बाबर हायातले उत्कृष्ट प्रदर्शन गरे
+--------------------------------------------------
+Target Transcript मन्त्री विश्वकर्माले राष्ट्रिय खेलकुद 
+Predicted Transcript मन्त्री विश्वकर्माले उथाईका लागन्दा
+--------------------------------------------------
+Target Transcript यो जितसँगै काठमाडौंले ४
+Predicted Transcript यो जितसँगै काठमाडौंले ४
+--------------------------------------------------
+Target Transcript आयोजना गरेको पत्रकार सम्मेनलमा
+Predicted Transcript आयोजना गरेको पत्रकार सम्मेनलमा
+--------------------------------------------------
+Target Transcript भारतीय रुपैयाँमा किनेको थियो
+Predicted Transcript भारतीय रुपैयाँमा किनेको थियो
+--------------------------------------------------
+Target Transcript रूपमा विकास गर्नका लागि 
+Predicted Transcript रूपमा विकास गर्नका लागि 
+--------------------------------------------------
+Target Transcript ६७ रनको योगदान दिएका थिए
+Predicted Transcript अस्पान गर्थान गाहिएको थितान छ
+--------------------------------------------------
+Target Transcript पृथु बाँस्कोटा ३ तथा
+Predicted Transcript पृथु बाँस्कोटा ३ तथा
+--------------------------------------------------
+Target Transcript टिम चौराहा धनगढीलाई
+Predicted Transcript टन बनाउँर धनाउदी धनाउँदाए
+--------------------------------------------------
+Target Transcript दिलीप नाथ ४ रनमा आउट भए
+Predicted Transcript दीलीप नाथ ४ रनमा आउट भए
+--------------------------------------------------
+Target Transcript प्लेइङ एघारमा पर्ने सम्भावना
+Predicted Transcript ११ रनले हराउँदै लगाता
+--------------------------------------------------
+Target Transcript लक्ष्य काठमाडौंले अन्तिम
+Predicted Transcript लक्ष्य काठमाडौंले अन्तिम
+--------------------------------------------------
+Target Transcript खेलमा दोस्रो पराजय हो
+Predicted Transcript खेलमा दोस्रो पराजय हो
+--------------------------------------------------
+Target Transcript काठमाडौं गोल्डेन्सबीचको खेल
+Predicted Transcript काठमाडौं गोल्डेन्सबीचको खेल
+--------------------------------------------------
+Target Transcript दुई विकेट लिएका थिए
+Predicted Transcript दुई विकेट लिएका थिए
+--------------------------------------------------
+Target Transcript जगतबहादुर विश्वकर्माले जानकारी दिए
+Predicted Transcript जनताप्रति जवाफदेही हुने 
+--------------------------------------------------
+Target Transcript मैदान निर्माणका लागि जग्गासम्बन्धी 
+Predicted Transcript मैदान निर्माणका लागि जग्गासम्बन्धी 
+--------------------------------------------------
+Target Transcript मन्त्री विश्वकर्माले राष्ट्रिय खेलकुद 
+Predicted Transcript मन्त्री विश्वकर्माले मन्त्रालयको 
+--------------------------------------------------
+Target Transcript व्यक्त गरिएको छ
+Predicted Transcript व्यक्त गरिएको छ
+--------------------------------------------------
+Target Transcript २० ओभरमा ८ विकेट गुमाउदै
+Predicted Transcript २० ओभरमा ८ विकेट गुमाउदै
+--------------------------------------------------
+Target Transcript बलिङतर्फ धनगढीका सुनील धमलाले
+Predicted Transcript बलिङतर्फ धनगढीका सुनील धमलाले
+--------------------------------------------------
+Target Transcript काठमाडौं लिगको पहिलो स्थानमा छ
+Predicted Transcript काठमाडौं लिगको पहिलो स्थानमा छ
+--------------------------------------------------
+Target Transcript उनले ३ छक्का र १ चौका प्रहार गरे
+Predicted Transcript उनले ३ छक्का र १ चौका प्रहार गरे
+--------------------------------------------------
+Target Transcript र रुपन्देही च्यालेन्जर्सबीचको खेल
+Predicted Transcript र रुपन्देही च्यालेन्जर्सबीचको खेल
+--------------------------------------------------
+Target Transcript काठमाडौंको नौ अंक भएको छ
+Predicted Transcript काठमाडौं निं अंक छ
+--------------------------------------------------
+Target Transcript युवा तथा खेलकुद मन्त्रालयले
+Predicted Transcript युवा तथा खेलकुद मन्त्रालयले 
+--------------------------------------------------
+Target Transcript क्षतिमा १ सय ३७ रन
+Predicted Transcript क्षिने १थले १८ रन बनाउनुबाहा
+--------------------------------------------------
+Target Transcript २५ रन जोडेका थिए भने
+Predicted Transcript २५ रन जोडेका थिए भने
+--------------------------------------------------
+Target Transcript सामान्य लक्ष्य पछ्याएको धनगढी
+Predicted Transcript सार्दिबाल स्दै धछियाटनगढीचढी
+--------------------------------------------------
+Target Transcript तथा पारस खड्का शुभम
+Predicted Transcript खेलबा स्रत अं 
+--------------------------------------------------
+Target Transcript दोस्रो चरणमा पुगेको हो
+Predicted Transcript दोस्रो चरणमा पुगेको हो
+--------------------------------------------------
+Target Transcript मात्र प्रहार गर्न सकेका थिए
+Predicted Transcript मात्र प्रहार गर्न सकेका थिए
+--------------------------------------------------
+Target Transcript शनिबारदेखि सुरु हुने
+Predicted Transcript शनिबारदेखि सुरु हुने
+--------------------------------------------------
+Target Transcript आजको जितसँगै तीन खेलमा
+Predicted Transcript आजको जितसँगै तीन खेलमा
+--------------------------------------------------
+Target Transcript पेभिलियन फर्किए
+Predicted Transcript पेभिलियन फर्किए
+--------------------------------------------------
+Target Transcript भएको बताए
+Predicted Transcript भएको बताए
+--------------------------------------------------
+Target Transcript स्पिनर सन्दीप हाल
+Predicted Transcript स्पिनर सन्दीप हाल
+--------------------------------------------------
+Target Transcript बनाएको थियो
+Predicted Transcript बनाएको थियो
+--------------------------------------------------
+Target Transcript पनि लिएका छन्
+Predicted Transcript पनि लिएका छन्
+--------------------------------------------------
+Target Transcript बाबर ह्यायत १५ रन
+Predicted Transcript बाबर ह्यायत १५ रन
+--------------------------------------------------
+Target Transcript सन्दीपले आफूलाई दिन प्रतिदिन
+Predicted Transcript सन्दीपले आफलाई दिन प्रतिदिन
+--------------------------------------------------
+Target Transcript किंग्स र सिवाइसी अत्तरियाबीच हुनेछ
+Predicted Transcript कृष्ण स्थारिं है रनमा
+--------------------------------------------------
+Target Transcript समान २२ विकेट हात पारे
+Predicted Transcript समान २२ विकेट हात पारे
+--------------------------------------------------
+Target Transcript अर्धसतक प्रहार गरेका हायातले
+Predicted Transcript अर्धसतक प्रहार गरेका हायातले
+--------------------------------------------------
+Target Transcript आजको जितसँगै तीन खेलमा
+Predicted Transcript आजको जितसँगै तीन खेलमा
+--------------------------------------------------
+Target Transcript सम्मेलनमा सन्दीपबारे प्रशिक्षक
+Predicted Transcript सम्मेलनमा सन्दीपबारे प्रशिक्षक
+--------------------------------------------------
+Target Transcript सम्मेलनमा सन्दीपबारे प्रशिक्षक
+Predicted Transcript सम्मेलनमा सन्दीपबारे प्रशिक्षक
+--------------------------------------------------
+Target Transcript शून्यमा आउट भएका थिए
+Predicted Transcript शून्यमा आउट भएका थिए
+--------------------------------------------------
+Target Transcript ३४ बल खेलेका उनले
+Predicted Transcript ३४ बल खेलेका खिनले
+--------------------------------------------------
+Target Transcript दिल्लीको टिममा छन्
+Predicted Transcript दिल्लीको टिममा छन्
+--------------------------------------------------
+Target Transcript ११ तथा कप्तान पारस
+Predicted Transcript ११ तथा कप्तान पारस
+--------------------------------------------------
+Target Transcript विराटनगर किङ्सले लगातार
+Predicted Transcript दिलाटनगर किङ्सले लगातार
+--------------------------------------------------
+Target Transcript सम्मेलनमा सन्दीपबारे प्रशिक्षक
+Predicted Transcript सम्मेलनमा सन्दीपबारे प्रशिक्षक
+--------------------------------------------------
+Target Transcript आजको जितसँगै तीन खेलमा
+Predicted Transcript आजको जितसँगै तीन खेलमा
+--------------------------------------------------
+Target Transcript २२ विकेट लिएका थिए
+Predicted Transcript दुई विकेट लिएका थिए
+--------------------------------------------------
+Target Transcript प्लेअफमा पुगेको छ
+Predicted Transcript प्लेअफमा पुगेको छ
+--------------------------------------------------
+Target Transcript दिल्ली डेयरडेभिल्सले बिहिबार
+Predicted Transcript दिल्ली काठले भिल्सल
+--------------------------------------------------
+Target Transcript व्यक्त गरे
+Predicted Transcript व्यक्त गरिए
+--------------------------------------------------
+Target Transcript मन्त्री विश्वकर्माले राष्ट्रिय खेलकुद 
+Predicted Transcript मन्त्री विश्वकर्माले खेलकुद क्षेत्रको 
+--------------------------------------------------
+Target Transcript अन्तर्राष्ट्रियस्तरको रंगशाला निर्माणका 
+Predicted Transcript अनुसारको कामहरूको प्रगा 
+--------------------------------------------------
+Target Transcript र रुपन्देही च्यालेन्जर्सबीचको खेल
+Predicted Transcript र रुपन्देही च्यालेन्जर्सबीचको खेल
+--------------------------------------------------
+Target Transcript २ जितसहित ४ अंक जोडेको
+Predicted Transcript २ जितसहित ४ अंक जोडेको
+--------------------------------------------------
+Target Transcript गरेको विराटनगरले निर्धारित
+Predicted Transcript गरेको विराटनगरले निर्धारित
+--------------------------------------------------
+Target Transcript समान २२ विकेट हात पारे
+Predicted Transcript समान २२ विकेट हात पारे
+--------------------------------------------------
+Target Transcript अर्धसतक प्रहार गरेका हायातले
+Predicted Transcript अर्धसतक प्रहार गरेका हायातले
+--------------------------------------------------
+Target Transcript लागि आवश्यक पर्ने जग्गाको 
+Predicted Transcript लागि आवश्यक पर्ने जग्गाको 
+--------------------------------------------------
+Target Transcript प्लेइङ एघारमा पर्ने सम्भावना
+Predicted Transcript दीले कार्ने पिरमे अदम्भावना
+--------------------------------------------------
+Target Transcript गरेको काठमाडौंले ९ विकेटको
+Predicted Transcript गरेको काठमाडौंले ९ विकेटको
+--------------------------------------------------
+Target Transcript शुभम् कामतले १ विकेट लिए
+Predicted Transcript शुभम् कामतले १ विकेट लिए
+--------------------------------------------------
+Target Transcript अन्तिम ओभरमा अत्तरियाका लागि
+Predicted Transcript अन्तिम ओभरमा अत्तरियाका लागि
+--------------------------------------------------
+Target Transcript क्षतिमा १ सय ३७ रन
+Predicted Transcript कोषिदान खिराइ८ रन बनाउदा
+--------------------------------------------------
+Target Transcript दीपेन्द्रसिंह ऐरी ९ रनमा
+Predicted Transcript दीले १० दिन हिलेन्दा
+--------------------------------------------------
+Target Transcript पर्ने सम्भावना रहेको दिल्ली
+Predicted Transcript पर्ने सम्भावना रहेको
+--------------------------------------------------
+Target Transcript काठमाडौं गोल्डेन्सबीचको खेल
+Predicted Transcript काठमाडौं गोल्डेन्सबीचको खेल
+--------------------------------------------------
+Target Transcript बोल्दै प्रशिक्षक पोन्टिङले
+Predicted Transcript बोल्दै प्रशिक्षक पोन्टिङले
+--------------------------------------------------
+Target Transcript शुभम् कामतले १ विकेट लिए
+Predicted Transcript शुभम् कामतले १ विकेट लिए
+--------------------------------------------------
+Target Transcript समेत प्रशिक्षक पोन्टिङले
+Predicted Transcript पेभि प्रशिक्षक पोन्टिङले
+--------------------------------------------------
+Target Transcript ज्ञानेन्द्र मल्लले
+Predicted Transcript ज्ञानेन्द्र मल्लले
+--------------------------------------------------
+Target Transcript मस्यौदा तयार पार्ने पोखरा 
+Predicted Transcript मस्यौदा तयार पार्ने पोखो 
+--------------------------------------------------
+Target Transcript सम्मेलन गरी आफ्नो १०० 
+Predicted Transcript मार्दे निर्दाण लागिएको ज्नाण 
+--------------------------------------------------
+Target Transcript जिम्मेवारी लिएको जेठ १३ 
+Predicted Transcript जिम्मेवारी लिएको जेठ १३ 
+--------------------------------------------------
+Target Transcript यसअघि भुपेन्द्र थापाले ३६
+Predicted Transcript यसअघि भुपेन्द्र थापाले ३६
+--------------------------------------------------
+Target Transcript युवा तथा खेलकुद मन्त्रालयले 
+Predicted Transcript युवा तथा खेलकुद मन्त्रालयले 
+--------------------------------------------------
+Target Transcript काम सम्पन्न गर्ने पनि बताए
+Predicted Transcript काम सम्पन्न गर्ने पनि बताए
+--------------------------------------------------
+Target Transcript सर्राफले ४१ रन बनाउनुका
+Predicted Transcript सर्राफले ४१ रन बनाउनुका
+--------------------------------------------------
+Target Transcript समेत प्रशिक्षक पोन्टिङले
+Predicted Transcript पारेक्दा सिक्षक पोन्टिङले
+--------------------------------------------------
+Target Transcript योगदान दिँदा कमलसिंह ऐरी
+Predicted Transcript योगदान दिँदा कमलसिंह ऐरी
+--------------------------------------------------
+Target Transcript विराटनगरको लगातार दोस्रो जित
+Predicted Transcript काठमाडौं लिगको पहितो छ
+--------------------------------------------------
+Target Transcript विराटनगरको लगातार दोस्रो जित
+Predicted Transcript काठमाडौंको लगातार चौथो जित
+--------------------------------------------------
+Target Transcript डेयरडेभिल्सका प्रशिक्षक रिकी
+Predicted Transcript डेयरडेभिल्सका प्रशिक्षक रिकी
+--------------------------------------------------
+Target Transcript विराटनगर किङ्सले लगातार
+Predicted Transcript दिराटनगर किङ्सले लगातार
+--------------------------------------------------
+Target Transcript इन्डियन प्रिमियर लिग आईपीएल
+Predicted Transcript इन्डियन प्रिमियर लिग आईपीएल
+--------------------------------------------------
+Target Transcript तेस्रो स्थानमा झरेको छ
+Predicted Transcript तेस्रो स्थानमा झरेको छ
+--------------------------------------------------
+Target Transcript उनले अन्तिम ओभरका
+Predicted Transcript उनले अन्तिम ओभरका
+--------------------------------------------------
+Target Transcript स्पिनर सन्दीप हाल
+Predicted Transcript स्पिनर सन्दीप हाल
+--------------------------------------------------
+Target Transcript पोन्टिङले बताएका छन्
+Predicted Transcript उनले ब्ने काठमा प्ने
+--------------------------------------------------
+Target Transcript बनाएको थियो
+Predicted Transcript बनाएको थियो
+--------------------------------------------------
+Target Transcript कप्तान पारस खड्काले
+Predicted Transcript कप्तान पारस खड्काले
+--------------------------------------------------
+Target Transcript मन्त्रालयले १०० दिनभित्र 
+Predicted Transcript मन्त्रालयले १०० दिनभित्र 
+--------------------------------------------------
+Target Transcript प्रतियोगिताको प्ले अफमा पुगिसकेका छन्
+Predicted Transcript पन्तियोगिताको सुरूवात गर्नाछ
+--------------------------------------------------
+Target Transcript नरेश बुढाऐर २७ रन बनाउँदा
+Predicted Transcript नरेश बुढाऐर २७ रन बनाउँदा
+--------------------------------------------------
+Target Transcript रासिद खानले १६ रन जोडे
+Predicted Transcript रासिद खानले १६ रन जोडे
+--------------------------------------------------
+Target Transcript खेल स्थगनसँगै दुवै टोलीले
+Predicted Transcript खेल स्थगनसँगै दुवै टोलीले
+--------------------------------------------------
+Target Transcript शुभम् कामतको १८ रन बनाए
+Predicted Transcript शुभम् कामतको १८ रन बनाए
+--------------------------------------------------
+Target Transcript सर्वाधिक ४१ रन जोडेका थिए
+Predicted Transcript सर्वाधिक ४१ रन जोडेका थिए
+--------------------------------------------------
+Target Transcript धनगढी प्रिमियर लिग क्रिकेट
+Predicted Transcript धनगढी प्रिमियर लिग क्रिकेट
+--------------------------------------------------
+Target Transcript आयोजना गरेको पत्रकार सम्मेनलमा
+Predicted Transcript आयोजना गरेको पत्रकार सम्मेनलमा
+--------------------------------------------------
+Target Transcript यता अत्तरियाको भने तेस्रो
+Predicted Transcript यता अत्तरियाको भने तेस्रो
+--------------------------------------------------
+Target Transcript अघि बढाउने प्रतिबद्धता 
+Predicted Transcript अघि बाउउने प्रतिबद्धता 
+--------------------------------------------------
+Target Transcript भनिएको महेन्द्रनगर युनाइटेड र
+Predicted Transcript भन्तिमो मैदानेन्र युनाउटेट र
+--------------------------------------------------
+Target Transcript समेत प्रशिक्षक पोन्टिङले
+Predicted Transcript समेत प्रशिक्षक पोन्टिङले
+--------------------------------------------------
+Target Transcript कारण रद्द भएको थियो
+Predicted Transcript कारण पद्द भएको थियो
+--------------------------------------------------
+Target Transcript ६७ रनको योगदान दिएका थिए
+Predicted Transcript काठमाडौंको लगातार चौथो जित
+--------------------------------------------------
+Target Transcript ज्ञानेन्द्र मल्लले
+Predicted Transcript ज्ञानेन्द्र मल्लले
+--------------------------------------------------
+Target Transcript धनगढीका लागि सबैभन्दा
+Predicted Transcript धनगढीका लागि सबैभन्दा
+--------------------------------------------------
+Target Transcript बनाएको थियो
+Predicted Transcript बनाएको थियो
+--------------------------------------------------
+Target Transcript बनाएको थियो
+Predicted Transcript बनाएको थियो
+--------------------------------------------------
+Target Transcript युवा तथा खेलकुद मन्त्री 
+Predicted Transcript युवा तथा खेलकुद मन्त्री 
+--------------------------------------------------
+Target Transcript निर्माण कार्य सुरू गर्ने 
+Predicted Transcript निर्माण कार्य सुरू गर्ने 
+--------------------------------------------------
+Target Transcript राजु रिजालले१८ रन बनाए
+Predicted Transcript राजु रिजालले१८ रन बनाए
+--------------------------------------------------
+Target Transcript बाबर हायातले उत्कृष्ट प्रदर्शन गरे
+Predicted Transcript बाबर हायातले उत्कृष्ट प्रदर्शन गरे
+--------------------------------------------------
+Target Transcript सरकारको प्रतिबद्धता पुरा गर्न 
+Predicted Transcript सरकारको प्रतिबद्धता पुरा गर्न 
+--------------------------------------------------
+Target Transcript सार्वजनिक गर्ने घोषणा पनि गरे
+Predicted Transcript सार्वजनिक गर्ने घोषणा पनि गरे
+--------------------------------------------------
+Target Transcript तथा सुबोध भातीले १० रन जोडे
+Predicted Transcript पथा सुबोध धावले १२ रन बो
+--------------------------------------------------
+Target Transcript डीपीएलमा काठमाडौंको लगातार
+Predicted Transcript डीपीएलमा काठमाडौंको लगातात
+--------------------------------------------------
+Target Transcript १ चौका र २ छक्का हिर्काए
+Predicted Transcript १ चौका र २ छक्का हिर्काए
+--------------------------------------------------
+Target Transcript अन्तिम बलमा ५ विकेटले
+Predicted Transcript अन्तिम बलमा ५ विकेटले
+--------------------------------------------------
+Target Transcript समेत प्रशिक्षक पोन्टिङले
+Predicted Transcript पारेक्दा सिक्षक पोन्टिङले
+--------------------------------------------------
+Target Transcript शनिबारदेखि सुरु हुने
+Predicted Transcript शनिबारदेखि सुरु हुने
+--------------------------------------------------
+Target Transcript ४० बल खेलेका मल्लले
+Predicted Transcript ४० बल खेलेका मल्लले
+--------------------------------------------------
+Target Transcript बाँकी छँदै सबै विकेट
+Predicted Transcript बाँकी छँदै सबै विकेट
+--------------------------------------------------
+Target Transcript लगातार चौथो जित हात
+Predicted Transcript काठमाडौंको जितमा रासिद खान
+--------------------------------------------------
+Target Transcript ११ तथा कप्तान पारस
+Predicted Transcript ११ तथा कप्तान पारस
+--------------------------------------------------
+Target Transcript सोही समयभित्र 
+Predicted Transcript सोही समयभित्र 
+--------------------------------------------------
+Target Transcript उसले अभ्यासमा निकै
+Predicted Transcript १स रन खर्दिङ ख्टिने
+--------------------------------------------------
+Target Transcript काठमाडौं र महेन्द्रनगर
+Predicted Transcript काठमाडौं र महेन्द्रनगर
+--------------------------------------------------
+Target Transcript उनले ४ ओभरमा
+Predicted Transcript उनले ४ ओभरमा
+--------------------------------------------------
+Target Transcript गर्दै नट आउट रहे
+Predicted Transcript गर्दै नट आउट रहे
+--------------------------------------------------
+Target Transcript सरकारको प्रतिबद्धता पुरा गर्न 
+Predicted Transcript सरकारको प्रतिबद्धता पुरा गर्न 
+--------------------------------------------------
+Target Transcript गुमाएर १ सय २७ रन
+Predicted Transcript गुमाएर १ सय २७ रन
+--------------------------------------------------
+Target Transcript सन्दीप लामिछाने प्लेइङ ११ मा
+Predicted Transcript सन्दीप लामिछाने प्लेइङ ११ मा
+--------------------------------------------------
+Target Transcript अक्सनबाट २० लाख
+Predicted Transcript अक्सनबाट २० लाख
+--------------------------------------------------
+Target Transcript तेस्रो जितसँगै ६ अंकसहित
+Predicted Transcript तेस्रो जितसँगै ६ अंकसहित
+--------------------------------------------------
+Target Transcript आजको जितसँगै तीन खेलमा
+Predicted Transcript आजको जितसँगै तीन खेलमा
+--------------------------------------------------
+Target Transcript काठमाडौंको नौ अंक भएको छ
+Predicted Transcript काठमाडौं र महेन्द रनगरन
+--------------------------------------------------
+Target Transcript १८ रन चाहिएको स्थितिमा
+Predicted Transcript १८ रनले हराउँदै गर्था
+--------------------------------------------------
+Target Transcript पहिले ब्याटिङ गर्दै विराटनगरले
+Predicted Transcript पहिले ब्याटिङ गर्दै विराटनगरले
+--------------------------------------------------
+Target Transcript सन्दीपको राम्रो तारिफ गरे
+Predicted Transcript सन्दीपको राम्रो तारिफ गरे
+--------------------------------------------------
+Target Transcript रन बनाउनुबाहेक अन्यले
+Predicted Transcript रन बनाउनुबाहेक अन्यले
+--------------------------------------------------
+Target Transcript कप्तान पारस खड्काले
+Predicted Transcript कप्तान पारस खड्काले
+--------------------------------------------------
+Target Transcript काठमाडौं र महेन्द्रनगर
+Predicted Transcript काठमाडौं र महेन्द्रनगर
+--------------------------------------------------
+Target Transcript दोस्रो जित दर्ता गरेको छ
+Predicted Transcript दोस्रो जित दर्ता गरेको छ
+--------------------------------------------------
+Target Transcript बनाएको थियो
+Predicted Transcript बनाएको थियो
+--------------------------------------------------
+Target Transcript रहेको काठमाडौं गोल्डेन्स
+Predicted Transcript रहेको काठमाडौं गोल्डेन्स
+--------------------------------------------------
+Target Transcript राम्रो गरिरेहको छ
+Predicted Transcript राम्रो गरिरेहको छ
+--------------------------------------------------
+Target Transcript स्पिनर सन्दीप हाल
+Predicted Transcript स्पिनर सन्दीप हाल
+--------------------------------------------------
+Target Transcript आउट भए भने
+Predicted Transcript आउट भए भने
+--------------------------------------------------
+Target Transcript गते १०० दिन हुँदैछ
+Predicted Transcript दन्ताप्रि जवाफदरी ह्रगाउने 
+--------------------------------------------------
+Target Transcript युवा तथा खेलकुद मन्त्रालयले
+Predicted Transcript युवा तथा खेलकुद मन्त्रालयले 
+--------------------------------------------------
+Target Transcript यसअघि भुपेन्द्र थापाले ३६
+Predicted Transcript यसअघि भुपेन्द्र थापाले ३६
+--------------------------------------------------
+Target Transcript डिपिएल  खेल नभएपछि महेन्द्रनगर
+Predicted Transcript डिपिएल  खेल नभएपछि महेन्द्रनगर
+--------------------------------------------------
+Target Transcript कारण शनिबार चौराह धनगढी
+Predicted Transcript कारण शनिबार चौराह धनगढी
+--------------------------------------------------
+Target Transcript गरेको विराटनगरले निर्धारित
+Predicted Transcript गरेको विराटनगरले निर्धारित
+--------------------------------------------------
+Target Transcript अन्तिम ओभरमा स्ट्राइकमा रहेका
+Predicted Transcript अन्तिम ओभरमा स्ट्राइकमा रहेका
+--------------------------------------------------
+Target Transcript धनगढीको मैदान हिलाम्य भएपछि
+Predicted Transcript धनगढीको मैदान हिलाम्य भएपछि
+--------------------------------------------------
+Target Transcript सन्दीपले बलिङमा दिनप्रतिदिन
+Predicted Transcript सन्दीपले बलिङमा दिनपले दिनन
+--------------------------------------------------
+Target Transcript भनिएको महेन्द्रनगर युनाइटेड र
+Predicted Transcript भन्तिमो मैदानेन्र युनाउटेट र
+--------------------------------------------------
+Target Transcript हराउँदै लिगको शिर्ष स्थानमा
+Predicted Transcript काठमा दिँलो जिता रासिद खान
+--------------------------------------------------
+Target Transcript बिहीबार भएको खेलमा घरेलु
+Predicted Transcript बिहीबार भएको खेलमा घररण
+--------------------------------------------------
+Target Transcript शून्यमा आउट भएका थिए
+Predicted Transcript शून्यमा आउट भएका थिए
+--------------------------------------------------
+Target Transcript कार्य सुरू गर्ने योजना 
+Predicted Transcript पनि तय गरेको छ
+--------------------------------------------------
+Target Transcript कारण रद्द भएको थियो
+Predicted Transcript कारण रद्द भएको छियो
+--------------------------------------------------
+Target Transcript खेलाडी भएको भन्दै उनले
+Predicted Transcript पारेको भन्दै ख्टिए
+--------------------------------------------------
+Target Transcript नेपाली युवा स्पिनर
+Predicted Transcript नेपाली युवा स्पिनर
+--------------------------------------------------
+Target Transcript आउट भए भने
+Predicted Transcript आउट भए भने
+--------------------------------------------------
+Target Transcript अस्पतालको निर्माण कार्य सुरू 
+Predicted Transcript पन्तापनो अर्रियोहना सुराफले 
+--------------------------------------------------
+Target Transcript अनुसारको कामहरूको प्रगति 
+Predicted Transcript अनुसारको जिंहदरबार्ने 
+--------------------------------------------------
+Target Transcript सार्वजनिक गरिएको हो
+Predicted Transcript सार्वजनिक गरिएको हो
+--------------------------------------------------
+Target Transcript निर्माण कार्य सुरू गर्ने 
+Predicted Transcript निर्माण कार्य सुरू गर्ने 
+--------------------------------------------------
+Target Transcript पहिचान गर्ने योजना अघि सारिएको छ
+Predicted Transcript पहिचान गर्ने योजना अघि सारिएको छ
+--------------------------------------------------
+Target Transcript मन्त्री विश्वकर्माले खेलकुद क्षेत्रको 
+Predicted Transcript मन्त्री विश्वकर्माले खेलकुद क्षेत्रको 
+--------------------------------------------------
+Target Transcript तुलसीपुर र इटहरीलाई खेलकुद सहरको 
+Predicted Transcript नन्तीको मुराइद हुवाइ खेलाउह सुराउले
+--------------------------------------------------
+Target Transcript डिपिएल  खेल नभएपछि महेन्द्रनगर
+Predicted Transcript डिपिएल  खेल नभएपछि महेन्द्रनगर
+--------------------------------------------------
+Target Transcript काठमाडौंको लगातार चौथो जित
+Predicted Transcript काठमाडौंको लगातार चौथो जित
+--------------------------------------------------
+Target Transcript उनी सहि विकल्प हुने बताए
+Predicted Transcript उनी सहि विकल्प हुने बताए
+--------------------------------------------------
+Target Transcript यसअघि भुपेन्द्र थापाले ३६
+Predicted Transcript १स जिन स्थाने हुथ तथा
+--------------------------------------------------
+Target Transcript शुभम् कामतको १८ रन बनाए
+Predicted Transcript शुभम् कामतको १८ रन बनाए
+--------------------------------------------------
+Target Transcript इन्डियन प्रिमियर लिग आईपीएल
+Predicted Transcript इन्डियन प्रिमियर लिग आईपीएल
+--------------------------------------------------
+Target Transcript लक्ष्य काठमाडौंले अन्तिम
+Predicted Transcript लक्ष्य काठमाडौंले अन्तिम
+--------------------------------------------------
+Target Transcript तेस्रो स्थानमा झरेको छ
+Predicted Transcript तेस्रो स्थानमा झरेको छ
+--------------------------------------------------
+Target Transcript उसका लागि कप्तान ज्ञानेन्द्र मल्लले
+Predicted Transcript उसका लागि कप्तान ज्ञानेन्द्र मल्लले
+--------------------------------------------------
+Target Transcript दोस्रो चरणमा पुगेको हो
+Predicted Transcript दोस्रो चरणमा पुगेको हो
+--------------------------------------------------
+Target Transcript डेयरडेभिल्सका प्रशिक्षक रिकी
+Predicted Transcript डेयरडेभिल्सका प्रशिक्षक रिकी
+--------------------------------------------------
+Target Transcript ललितनारायण राजवंशीले
+Predicted Transcript लल्तनारायण राजवंशीले
+--------------------------------------------------
+Target Transcript समेत प्रशिक्षक पोन्टिङले
+Predicted Transcript पेभि प्रशिक्षक पोन्टिङले
+--------------------------------------------------
+Target Transcript शून्यमा आउट भएका थिए
+Predicted Transcript शून्ममा आउट भएका थिए
+--------------------------------------------------
+Target Transcript पेभिलियन फर्किए
+Predicted Transcript पेभिलियन फर्किए
+--------------------------------------------------
+Target Transcript खेलाडी भएको भन्दै उनले
+Predicted Transcript कारण खेल्द स्डि फो
+--------------------------------------------------
+Target Transcript बताएका हुन्
+Predicted Transcript बताएका हुन्
+--------------------------------------------------
+Target Transcript काठमाडौं लिगको पहिलो स्थानमा छ
+Predicted Transcript काठमाडौं लिगको पहिलो स्थानमा छ
+--------------------------------------------------
+Target Transcript अत्तरियाबीचको खेलसमेत वर्षाका
+Predicted Transcript अत्तरियाबीचको खेलसमेत वर्षाका
+--------------------------------------------------
+Target Transcript विराटनगरले दिएको १६५ रनको
+Predicted Transcript विराटनगरले दिएको १६५ रनको
+--------------------------------------------------
+Target Transcript गरेको काठमाडौंले ९ विकेटको
+Predicted Transcript गरेको काठमाडौंले ९ विकेटको
+--------------------------------------------------
+Target Transcript देखिएको विवाद तत्काल समाधान 
+Predicted Transcript देखिएको विवाद तत्काल समाधान 
+--------------------------------------------------
+Target Transcript सर्वाधिक ४१ रन जोडेका थिए
+Predicted Transcript सर्वाधिक ४१ रन जोडेका थिए
+--------------------------------------------------
+Target Transcript बलिङतर्फ काठमाडौंका सुवोध भाटीले
+Predicted Transcript बलिङतर्फ धोली सुकाठीले
+--------------------------------------------------
+Target Transcript २४ बल खेलेर २६ रनमा
+Predicted Transcript दील्ल खेलेर २६ रनमा
+--------------------------------------------------
+Target Transcript पहिले ब्याटिङ गर्दै विराटनगरले
+Predicted Transcript पहि विराटनगर गर्यय बहेलाई
+--------------------------------------------------
+Target Transcript पहिले ब्याटिङ गर्दै विराटनगरले
+Predicted Transcript अन्ति गर्ने क्रममा विराटनगरका
+--------------------------------------------------
+Target Transcript अन्तिम खेल स्थगन गरिएको
+Predicted Transcript अन्तिम खेल स्थगन गरिएको
+--------------------------------------------------
+Target Transcript शुभम् कामतको १८ रन बनाए
+Predicted Transcript शुभम् कामतको १८ रन बनाए
+--------------------------------------------------
+Target Transcript दीपेन्द्रसिंह ऐरी ९ रनमा
+Predicted Transcript दीपेन्द्रसिंह ऐरी ९ रनमा
+--------------------------------------------------
+Target Transcript २० ओभरमा ९ विकेट गुमाउँदै
+Predicted Transcript २न्तिम बलमा २ रहेटले
+--------------------------------------------------
+Target Transcript नथाक्ने जोश देखिएको छ
+Predicted Transcript नथाक्ने जोश देखिएको छ
+--------------------------------------------------
+Target Transcript प्रगति गर्दै गैरहेको
+Predicted Transcript प्रगति गर्दै गैरहेको
+--------------------------------------------------
+Target Transcript दुई विकेट लिएका थिए
+Predicted Transcript दुई विकेट लिएका थिए
+--------------------------------------------------
+Target Transcript खेलमा दोस्रो पराजय हो
+Predicted Transcript खेलमा दोस्रो पराजय हो
+--------------------------------------------------
+Target Transcript बनाएको थियो
+Predicted Transcript बनाएको थियो
+--------------------------------------------------
+Target Transcript जिम्मेवारी लिएको जेठ १३ 
+Predicted Transcript दिनमा गर्ने प्रमुख कार्यहरू 
+--------------------------------------------------
+Target Transcript जगतबहादुर विश्वकर्माले जानकारी दिए
+Predicted Transcript जगबबादादुर विश्वाले जिानकारी दिए
+--------------------------------------------------
+Target Transcript बलिङ तर्फ अत्तरीयाका शिवसंकर उराले
+Predicted Transcript बलिङतर्फ धनगढीका सुनील धमलाले
+--------------------------------------------------
+Target Transcript १२ वर्षे खेलकुद गुरु योजनाको 
+Predicted Transcript १२ वर्षे खेलकुद गुरु योजनाको 
+--------------------------------------------------
+Target Transcript रन बनाएर काठमाडौंलाई
+Predicted Transcript रन बनाएर काठमाडौंलाई
+--------------------------------------------------
+Target Transcript १३८ रनको विजयी लक्ष्य
+Predicted Transcript १८ रन खर्चिए
+--------------------------------------------------
+Target Transcript बिहानभन्दा अहिले मौसममा
+Predicted Transcript बिहानभन्दा अहिले मौसमममा
+--------------------------------------------------
+Target Transcript रासिद खानले १६ रन जोडे
+Predicted Transcript अास्रो लानले स्थो
+--------------------------------------------------
+Target Transcript शुभम् कामतको १८ रन बनाए
+Predicted Transcript शुभम् कामतको १८ रन बनाए
+--------------------------------------------------
+Target Transcript लगातार चौथो जित हात
+Predicted Transcript चगातार चौथो जित हात
+--------------------------------------------------
+Target Transcript सक्ने सम्भावना रहेको
+Predicted Transcript पोर्रो स्थानमा गरेको
+--------------------------------------------------
+Target Transcript कारण शनिबार चौराह धनगढी
+Predicted Transcript कारण शनिबार चौराह धनगढी
+--------------------------------------------------
+Target Transcript बाँकी छँदै सबै विकेट
+Predicted Transcript बाँकी छँदै सबै विकेट
+--------------------------------------------------
+Target Transcript पवन सर्राफले अलराउन्ड
+Predicted Transcript पवन सर्राफले अलराउन्ड
+--------------------------------------------------
+Target Transcript पहिचान गर्ने योजना अघि सारिएको छ
+Predicted Transcript पनुसारको कामहरूको प्रगार गर्नि 
+--------------------------------------------------
+Target Transcript गर्दै नट आउट रहे
+Predicted Transcript गर्दै नट आउट रहे
+--------------------------------------------------
+Target Transcript मन्त्री विश्वकर्माले खेलकुद क्षेत्रको 
+Predicted Transcript मन्त्री विश्वकर्माले मन्त्रालयको 
+--------------------------------------------------
+Target Transcript भएको बताए
+Predicted Transcript आतको बताए
+--------------------------------------------------
+Target Transcript बताएका हुन्
+Predicted Transcript बताएका हुन्दै हुन्
+--------------------------------------------------
+Target Transcript गर्ने पनि कार्ययोजनामा 
+Predicted Transcript पनि सर्ने प्रिबदाउना 
+--------------------------------------------------
+Target Transcript व्यक्त गरे
+Predicted Transcript अन्ता गर्ने प्रमा अफहा 
+--------------------------------------------------
+Target Transcript यस्तै दोस्रो पराजय बेहोरेको विराटनगर लिगको
+Predicted Transcript यस्तै दोस्रो पराजय बेहोरेको विराटनगर लिगको
+--------------------------------------------------
+Target Transcript पहिचान गर्ने योजना अघि सारिएको छ
+Predicted Transcript पोहि साउने प्रति हुरता 
+--------------------------------------------------
+Target Transcript खेल स्थगनसँगै दुवै टोलीले
+Predicted Transcript खेल स्थगनसँगै दुवै टोलीले
+--------------------------------------------------
+Target Transcript कामहरूको योजना शुक्रबार 
+Predicted Transcript कामहरूको योजना शुक्रबार 
+--------------------------------------------------
+Target Transcript दीपेन्द्रसिंह ऐरी ९ रनमा
+Predicted Transcript दीपेन्द्रसिंह ऐरी ९ रनमा
+--------------------------------------------------
+Target Transcript धनगढीलाई सस्तैमा समेट्ने
+Predicted Transcript धनगढीलाई सस्तैमा समेट्ने
+--------------------------------------------------
+Target Transcript बोल्दै प्रशिक्षक पोन्टिङले
+Predicted Transcript बोल्दै प्रशिक्षक पोन्टिङले
+--------------------------------------------------
+Target Transcript बोल्दै प्रशिक्षक पोन्टिङले
+Predicted Transcript बोल्दै प्रशिक्षक पोन्टिङले
+--------------------------------------------------
+Target Transcript उसका लागि विराटनगरका
+Predicted Transcript उनले आ विराट गर्कारका
+--------------------------------------------------
+Target Transcript लिएर मैदानमा आएको अत्तरिया
+Predicted Transcript लिएर मैदानमा आएको अत्तरिया
+--------------------------------------------------
+Target Transcript काठमाडौंको जितमा रासिद खान
+Predicted Transcript काठमाडौंको जितमा रासिद खान
+--------------------------------------------------
+Target Transcript गुमाएर १ सय २७ रन
+Predicted Transcript गुमाएर १ सय २७ रन
+--------------------------------------------------
+Target Transcript तेस्रो स्थानमा झरेको छ
+Predicted Transcript तेस्रो स्थानमा झरेको छ
+--------------------------------------------------
+Target Transcript प्लेअफ नजिक पुगेको छ
+Predicted Transcript प्लेअफ नजिक पुगेको छ
+--------------------------------------------------
+Target Transcript २५ रन बनाए
+Predicted Transcript २५ रन बनाए
+--------------------------------------------------
+Target Transcript बनाएको थियो
+Predicted Transcript बनाएको थियो
+--------------------------------------------------
+Target Transcript बनाउन सफल भयो
+Predicted Transcript बनाउन सफल भयो
+--------------------------------------------------
+Target Transcript आउट भए भने
+Predicted Transcript आउट भए भने
+--------------------------------------------------
+Target Transcript ३ विकेट लिए
+Predicted Transcript जेभिकेट लिए
+--------------------------------------------------
+Target Transcript जिम्मेवारी लिएको जेठ १३ 
+Predicted Transcript दनताप्रति जवाफदेही हुने 
+--------------------------------------------------
+Target Transcript यस्तै दोस्रो पराजय बेहोरेको विराटनगर लिगको
+Predicted Transcript यस्तै दोस्रो पराजय बेहोरेको विराटनगर लिगको
+--------------------------------------------------
+Target Transcript दिने कार्ययोजना सार्वजनिक गरेको हो
+Predicted Transcript दीने कार्ययोजना सार्वजनिक गर्नु 
+--------------------------------------------------
+Target Transcript १ सय ६४ रन बनाएको थियो
+Predicted Transcript १ सय ६४ रन बनाएको थियो
+--------------------------------------------------
+Target Transcript अघि बढाउने प्रतिबद्धता 
+Predicted Transcript अनले अभ्राटिय स्राइकमा रहरागि
+--------------------------------------------------
+Target Transcript २ जितसहित ४ अंक जोडेको
+Predicted Transcript २ जोतितसँद ४ अंको जोडेको
+--------------------------------------------------
+Target Transcript युवा तथा खेलकुद मन्त्रालयले
+Predicted Transcript युवा तथा खेलकुद मन्त्रालयले 
+--------------------------------------------------
+Target Transcript काठमाडौंको लगातार चौथो जित
+Predicted Transcript काठमाडौंको लगातार चौथो जित
+--------------------------------------------------
+Target Transcript इन्डियन प्रिमियर लिग आईपीएल
+Predicted Transcript इन्डियन प्रिमियर लिग आईपीएल
+--------------------------------------------------
+Target Transcript काठमाडौं लिगको पहिलो स्थानमा छ
+Predicted Transcript काठमाडौं लिगको पहिलो स्थानमा छ
+--------------------------------------------------
+Target Transcript खेलमा दोस्रो पराजय हो
+Predicted Transcript यस्तै दोस्रो पराजय बेहोरेको विराटनगर 
+--------------------------------------------------
+Target Transcript कार्य सुरू गर्ने योजना 
+Predicted Transcript कार्य सुरू गर्ने योजना 
+--------------------------------------------------
+Target Transcript ३४ बल खेलेका उनले
+Predicted Transcript ३४ बल खेलेका खिनले
+--------------------------------------------------
+Target Transcript दिलीप नाथ ४ रनमा आउट भए
+Predicted Transcript दीलीप नाथ ४ रनमा आउट भए
+--------------------------------------------------
+Target Transcript उसका लागि कप्तान
+Predicted Transcript उसका लागि कप्तान
+--------------------------------------------------
+Target Transcript ललित भण्डारी र सांसद
+Predicted Transcript ललित भण्डारी र सांसद
+--------------------------------------------------
+Target Transcript टस जितेर पहिले ब्याटिङ
+Predicted Transcript टस जितेर पहिले ब्याटिङ
+--------------------------------------------------
+Target Transcript बिहीबार भएको खेलमा घरेलु
+Predicted Transcript बनाएको थोली स्थियो
+--------------------------------------------------
+Target Transcript पवन सर्राफले अलराउन्ड
+Predicted Transcript पवन सर्राफले अलराउन्ड
+--------------------------------------------------
+Target Transcript ४ रनमा आउट भए
+Predicted Transcript ४ रनमा आउट भए
+--------------------------------------------------
+Target Transcript युवा तथा खेलकुद मन्त्री 
+Predicted Transcript युवा तथा खेलकुद मन्त्री 
+--------------------------------------------------
+Target Transcript काठमाडौं गोल्डेन्सबीचको खेल
+Predicted Transcript काठमाडौं लिग च्वाले सिवाई
+--------------------------------------------------
+Target Transcript त्यसैगरी मन्त्रालयले १३ औँ दक्षिण 
+Predicted Transcript त्यसैगरी मन्त्रालयले १३ औँ दक्षिण 
+--------------------------------------------------
+Target Transcript दिएको १ सय २८ रनको
+Predicted Transcript दीषिदा चोल स्थै राउथ बाउनाह 
+--------------------------------------------------
+Target Transcript लागि आवश्यक पर्ने जग्गाको 
+Predicted Transcript लागि आवश्यक पर्ने जग्गाको 
+--------------------------------------------------
+Target Transcript लागि आवश्यक पर्ने जग्गाको 
+Predicted Transcript लागि आवश्यक पर्ने जग्गाको 
+--------------------------------------------------
+Target Transcript आवश्यक पूर्वाधार निर्माणको 
+Predicted Transcript आवश्यक सम्भावता अध्ययन गर्ने 
+--------------------------------------------------
+Target Transcript हराउँदै लिगको शिर्ष स्थानमा
+Predicted Transcript हराउँदै लिगको शिर्ष स्थानमा
+--------------------------------------------------
+Target Transcript १८ रन चाहिएको स्थितिमा
+Predicted Transcript १८ रन चाहिएको स्थितिमा
+--------------------------------------------------
+Target Transcript गुमाएर १ सय २७ रन
+Predicted Transcript उनाउन गर्दै ग्राउको उरनाउने
+--------------------------------------------------
+Target Transcript अन्तिम ओभरमा अत्तरियाका लागि
+Predicted Transcript अन्तिम ओभरमा स्त्राइकमा लागि
+--------------------------------------------------
+Target Transcript भनिएको महेन्द्रनगर युनाइटेड र
+Predicted Transcript भन्तिमो मैदानेन्र युनाउटेड र
+--------------------------------------------------
+Target Transcript १ सय ९ रनमा समेटियो
+Predicted Transcript १ सय ९ रनमा समेटियो
+--------------------------------------------------
+Target Transcript तीन तथा कृष्ण कार्कीले
+Predicted Transcript तीन तथा कृष्ण कार्कीले
+--------------------------------------------------
+Target Transcript तेस्रो स्थानमा झरेको छ
+Predicted Transcript तेस्रो स्थानमा झरेको छ
+--------------------------------------------------
+Target Transcript धनगढी प्रिमियर लिगमा
+Predicted Transcript गरेको खिर्र सबै 
+--------------------------------------------------
+Target Transcript काठमाडौं गोल्डेन्सबीचको खेल
+Predicted Transcript काठमाडौं गोल्डेन्सबीचको खेल
+--------------------------------------------------
+Target Transcript २५ रन बनाए
+Predicted Transcript २५ रन बनाए
+--------------------------------------------------
+Target Transcript नेपाली युवा स्पिनर
+Predicted Transcript नेपाली युवा स्पिनर
+--------------------------------------------------
+Target Transcript युवा छ अभ्यासमा
+Predicted Transcript दिपान गर्दान स्लाभ
+--------------------------------------------------
+Target Transcript आवश्यक पूर्वाधार निर्माणको 
+Predicted Transcript आवि आवश्यक जर्ने जोज्यन 
+--------------------------------------------------
+Target Transcript महेन्द्रनगर युनाइटेडको अंक ६ भएको छ
+Predicted Transcript अन्तिमा मैले हेल अफमाउँदेकेट 
+--------------------------------------------------
+Target Transcript अत्तरियाबीचको खेलसमेत वर्षाका
+Predicted Transcript अत्तरियाबीचको खेलसमेत वर्षाका
+--------------------------------------------------
+Target Transcript हराउँदै लिगको शिर्ष स्थानमा
+Predicted Transcript हराउँदै लिगको शिर्ष स्थानमा
+--------------------------------------------------
+Target Transcript १२६ रनमा समेटियो
+Predicted Transcript १२६ रनमा समेटियो
+--------------------------------------------------
+Target Transcript २५ रन जोडेका थिए भने
+Predicted Transcript २५ रन जोडेका थिए भने
+--------------------------------------------------
+Target Transcript काठमाडौंको जितमा रासिद खान
+Predicted Transcript काठमाडौंको जितमा रासिद खान
+--------------------------------------------------
+Target Transcript धनगढीका लागि सबैभन्दा
+Predicted Transcript धनगढीका लागि सबैभन्दा
+--------------------------------------------------
+Target Transcript रुस्लान धनगढी प्रिमियर
+Predicted Transcript दोस्रा धनगढी प्रिमा
+--------------------------------------------------
+Target Transcript अन्तिम ओभरमा अत्तरियाका लागि
+Predicted Transcript अन्तिम ओभरमा अत्तरियाका लागि
+--------------------------------------------------
+Target Transcript यस्तै प्रशिक्षक पोन्टिङले
+Predicted Transcript यस्तै प्रशिक्षक पोन्टिङले
+--------------------------------------------------
+Target Transcript धनगढीका लागि सबैभन्दा
+Predicted Transcript धनगढीका लागि सबैभन्दा
+--------------------------------------------------
+Target Transcript एकपटक हङकङका खेलाडी
+Predicted Transcript एकपटक हङकङका खेलाडी
+--------------------------------------------------
+Target Transcript सन्दीपको राम्रो तारिफ गरे
+Predicted Transcript सन्दीपको राम्रो तारिफ गरे
+--------------------------------------------------
+Target Transcript धनगढी प्रिमियर लिगमा
+Predicted Transcript धनगढी प्रिमियर लिग क्रिकेट
+--------------------------------------------------
+Target Transcript कार्ययोजनामा काठमाडौं उपत्यकाभित्र 
+Predicted Transcript कार्ययोजनामा काठमाडौं उपत्यकाभित्र 
+--------------------------------------------------
+Target Transcript जित नजिक पुर्याए
+Predicted Transcript नीतिको जित द्ताए
+--------------------------------------------------
+Target Transcript प्रदर्शन गरे
+Predicted Transcript प्रदर्शन गरे
+--------------------------------------------------
+Target Transcript सरकारको प्रतिबद्धता पुरा गर्न 
+Predicted Transcript सरकारको प्रतिबद्धता पुरा गर्न 
+--------------------------------------------------
+Target Transcript त्यसैगरी मूलपानी क्रिकेट मैदान 
+Predicted Transcript अनुसाप्रति जहर्ने प्राउने 
+--------------------------------------------------
+Target Transcript त्यसैगरी मूलपानी क्रिकेट मैदान 
+Predicted Transcript अन्ताप रिमलाई हुरिव खेलुद नसनु
+--------------------------------------------------
+Target Transcript डिपिएल  खेल नभएपछि महेन्द्रनगर
+Predicted Transcript डिपिएल  खेल नभएपछि महेन्द्रनगर
+--------------------------------------------------
+Target Transcript १ चौका र २ छक्का हिर्काए
+Predicted Transcript १ चौका र २ छक्का हिर्काए
+--------------------------------------------------
+Target Transcript दिएको १ सय २८ रनको
+Predicted Transcript दिएको १ सय २८ रनको
+--------------------------------------------------
+Target Transcript सन्दीप टिममा पर्ने सम्भावना छ
+Predicted Transcript सन्दीप टिममा पर्ने सम्भावना छ
+--------------------------------------------------
+Target Transcript ६७ रनको योगदान दिएका थिए
+Predicted Transcript अस्पाधिक ५ विर्व पारिकाटले
+--------------------------------------------------
+Target Transcript बाबर हायातले उत्कृष्ट प्रदर्शन गरे
+Predicted Transcript बाबर हायातले उत्कृष्ट प्रदर्शन गरे
+--------------------------------------------------
+Target Transcript नथाक्ने जोश देखिएको छ
+Predicted Transcript नथाका चिर्थो सित हो
+--------------------------------------------------
+Target Transcript विराटनगर ५ विकेटले पराजित
+Predicted Transcript विराटनगर ५ विकेटले पराजित
+--------------------------------------------------
+Target Transcript मस्यौदा तयार पार्ने पोखरा 
+Predicted Transcript मन्त्रा विश्व प्रे विमाटनाक
+--------------------------------------------------
+Target Transcript विजेता टोली प्ले अफमा पुग्नेछ
+Predicted Transcript विजेता टोली प्ले अफमा पुग्नेछ
+--------------------------------------------------
+Target Transcript बिहीबार भएको खेलमा घरेलु
+Predicted Transcript बिहाबार भएको खेलमा घरणलु
+--------------------------------------------------
+Target Transcript लगातार चौथो जित हात
+Predicted Transcript लगातार चौथो जित हात
+--------------------------------------------------
+Target Transcript कप्तान पारस खड्का
+Predicted Transcript कप्तान पारस खड्का
+--------------------------------------------------
+Target Transcript क्रिकेटर भएको भन्दै उनले
+Predicted Transcript क्रिकेटर भएको भन्दै उनले
+--------------------------------------------------
+Target Transcript लगातार चौथो जित हात
+Predicted Transcript लगातार चौथो जित हात
+--------------------------------------------------
+Target Transcript चाहिएको बेला उचित
+Predicted Transcript चाहिएको बेला उचित
+--------------------------------------------------
+Target Transcript क्रिकेटका लागि लेग
+Predicted Transcript क्रिकेटका लागि लेग
+--------------------------------------------------
+Target Transcript बलिङ तर्फ
+Predicted Transcript बलिङ गर्न सक्ने 
+--------------------------------------------------
+Target Transcript तुलसीपुर र इटहरीलाई खेलकुद सहरको 
+Predicted Transcript तुन्मार र इटहहरीलाई खेलकुद सहरको 
+--------------------------------------------------
+Target Transcript गर्ने प्रमुख 
+Predicted Transcript अन्ने प्रमुख 
+--------------------------------------------------
+Target Transcript उल्लेख गरिएको छ 
+Predicted Transcript उल्लेख गरिएको छ 
+--------------------------------------------------
+Target Transcript आयोजना गरेको पत्रकार सम्मेनलमा
+Predicted Transcript आयोजना गरेको पत्रकार सम्मेनलमा
+--------------------------------------------------
+Target Transcript अन्तिम बलमा ५ विकेटले
+Predicted Transcript अनले अभलमला ५ विकले
+--------------------------------------------------
+Target Transcript अन्तिम ओभरमा स्ट्राइकमा रहेका
+Predicted Transcript अन्तिम ओभरमा स्ट्राइकमा रहेका
+--------------------------------------------------
+Target Transcript अन्तिम बलमा ५ विकेटले
+Predicted Transcript अन्तिम बलमा ५ विकेटले
+--------------------------------------------------
+Target Transcript जोड्दा कुशल भुर्तेल ८
+Predicted Transcript जोड्दा कुशल भित्ने पथ
+--------------------------------------------------
+Target Transcript अक्सनबाट २० लाख
+Predicted Transcript क्सतार चौथो जित हात
+--------------------------------------------------
+Target Transcript मैदान पानीले भिजेका
+Predicted Transcript दिङान गर्दिङ काठि का
+--------------------------------------------------
+Target Transcript क्रिकेटका लागि लेग
+Predicted Transcript क्षिकेटका लागि लेग
+--------------------------------------------------
+Target Transcript सुधार आएको छ
+Predicted Transcript सुधार आएको छ
+--------------------------------------------------
+Target Transcript क्रिकेटका लागि लेग
+Predicted Transcript क्रिकेटका लागि लेग
+--------------------------------------------------
+Target Transcript ४ विकेट लिए
+Predicted Transcript ४ विकेट लिए
+--------------------------------------------------
+Target Transcript प्रदर्शन गरे
+Predicted Transcript प्रदर्शन गरे
+--------------------------------------------------

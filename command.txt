@@ -1,0 +1,81 @@
+python train.py --train-manifest-list ./libri_train_manifest.csv --valid-manifest-list ./libri_val_manifest.csv --test-manifest-list ./libri_test_clean_manifest.csv --batch-size 12 --labels-path data/labels/labels.json --lr 1e-4 --name libri_drop0.1_cnn_batch12_4_vgg_layer4 --save-folder save/ --save-every 5 --feat_extractor vgg_cnn --dropout 0.1 --epochs 1  --num-layers 4 --num-heads 8 --dim-model 512 --dim-key 64 --dim-value 64 --dim-input 161 --dim-inner 2048 --dim-emb 512 --shuffle --min-lr 1e-6 --k-lr 1
+
+python test.py --test-manifest-list libri_test_clean_manifest.csv --continue_from save/model
+
+
+
+python train.py --train-manifest-list ./libri_train_manifest.csv --valid-manifest-list ./libri_val_manifest.csv --test-manifest-list ./libri_test_clean_manifest.csv --batch-size 12 --labels-path data/labels/labels.json --lr 1e-4 --name libri_speech_model --save-folder save/ --save-every 5 --feat_extractor vgg_cnn --dropout 0.1 --epochs 1  --num-layers 4 --num-heads 8 --dim-model 512 --dim-key 64 --dim-value 64 --dim-input 161 --dim-inner 2048 --dim-emb 512 --shuffle --min-lr 1e-6 --k-lr 1
+
+
+
+nepali train command:(raw_data)
+
+python train.py --name nepali_speech_model_100_epoch --train-manifest-list ./nepali_train_manifest.csv --valid-manifest-list ./nepali_val_manifest.csv --test-manifest-list ./nepali_test_clean_manifest.csv --batch-size 12 --labels-path data/labels/nepali_labels_1.json --lr 1e-4 --name nepali_speech_model --save-folder ./save_1 --save-every 5 --feat_extractor vgg_cnn --dropout 0.1 --epochs 100  --num-layers 4 --num-heads 8 --dim-model 512 --dim-key 64 --dim-value 64 --dim-input 161 --dim-inner 2048 --dim-emb 512 --shuffle --min-lr 1e-6 --k-lr 1
+
+
+python test.py --test-manifest-list nepali_test_clean_manifest.csv --continue-from /save_1/nepali_speech_model/best
+
+
+python test.py --test-manifest-list nepali_test_clean_manifest.csv --continue-from save_1/nepali_speech_model/epoch_31.th > nepali_test.txt
+
+
+
+nepali train command:(ne_np_female dataset)
+
+Normal CPU RUN
+python train.py --name ne_np_female_model_40_epoch --train-manifest-list ./ne_np_female_train_manifest.csv --valid-manifest-list ./ne_np_female_val_manifest.csv --test-manifest-list ./ne_np_female_test_manifest.csv --batch-size 12 --labels-path data/labels/nepali_labels_1.json --lr 1e-3 --name ne_np_female_speech_model --save-folder ./save_ne_np_female --save-every 5 --feat_extractor vgg_cnn --dropout 0.1 --epochs 40  --num-layers 4 --num-heads 8 --dim-model 512 --dim-key 64 --dim-value 64 --dim-input 161 --dim-inner 2048 --dim-emb 512 --shuffle --min-lr 1e-6 --k-lr 1
+
+Normal CPU RUN(Final-after label correction)
+python train.py --name ne_np_female_model_1_40_epoch --train-manifest-list ./ne_np_female_train_manifest.csv --valid-manifest-list ./ne_np_female_val_manifest.csv --test-manifest-list ./ne_np_female_test_manifest.csv --batch-size 12 --labels-path data/labels/nepali_labels_1.json --lr 1e-3 --name ne_np_female_speech_model_1 --save-folder ./save_ne_np_female_1 --save-every 5 --feat_extractor vgg_cnn --dropout 0.1 --epochs 40  --num-layers 4 --num-heads 8 --dim-model 512 --dim-key 64 --dim-value 64 --dim-input 161 --dim-inner 2048 --dim-emb 512 --shuffle --min-lr 1e-6 --k-lr 1
+python test.py --test-manifest-list ne_np_female_train_manifest.csv  --continue-from save_ne_np_female_1/ne_np_female_speech_model_1/best_model.th  > nepali_test.txt
+
+#Run for 100 Epochs
+python train.py --name ne_np_female_model_1_100_epoch --train-manifest-list ./ne_np_female_train_manifest.csv --valid-manifest-list ./ne_np_female_val_manifest.csv --test-manifest-list ./ne_np_female_test_manifest.csv --batch-size 12 --labels-path data/labels/nepali_labels_1.json --lr 1e-4 --name ne_np_female_speech_model_1 --save-folder ./save_ne_np_female_1 --save-every 5 --feat_extractor vgg_cnn --dropout 0.1 --epochs 100  --num-layers 4 --num-heads 8 --dim-model 512 --dim-key 64 --dim-value 64 --dim-input 161 --dim-inner 2048 --dim-emb 512 --shuffle --min-lr 1e-6 --k-lr 1
+
+
+#Continue run after being haulted.
+python train.py --name ne_np_female_model_1_100_epoch --train-manifest-list ./ne_np_female_train_manifest.csv --valid-manifest-list ./ne_np_female_val_manifest.csv --test-manifest-list ./ne_np_female_test_manifest.csv --batch-size 12 --labels-path data/labels/nepali_labels_1.json --lr 1e-4 --name ne_np_female_speech_model_1 --save-folder ./save_ne_np_female_2 --save-every 5 --feat_extractor vgg_cnn --dropout 0.1 --epochs 100  --num-layers 4 --num-heads 8 --dim-model 512 --dim-key 64 --dim-value 64 --dim-input 161 --dim-inner 2048 --dim-emb 512 --shuffle --min-lr 1e-6 --k-lr 1 --continue-from save_ne_np_female_1/ne_np_female_speech_model_1/best_model.th
+
+
+#commands to be entered at 2am
+
+cd Rupesh/
+{% comment %} source env/bin/activate
+cd end2end-asr-pytorch-master/
+pip freeze > requirement_backup.txt {% endcomment %}    not required
+
+
+
+python test.py --test-manifest-list ne_np_female_train_manifest.csv  --continue-from save_ne_np_female_2/ne_np_female_speech_model_1/best_model.th  > nepali_test_scheduled_task.txt
+
+
+#Nepali speech dataset
+#Run for 100 Epochs
+python train.py --name nepali_dataset_100_epoch --train-manifest-list ./nepali_dataset_train_manifest.csv --valid-manifest-list ./nepali_dataset_val_manifest.csv --test-manifest-list ./nepali_dataset_test_manifest.csv --batch-size 12 --labels-path data/labels/nepali_labels_1.json --lr 1e-4 --save-folder ./save_nepali_dataset_3 --save-every 5 --feat_extractor vgg_cnn --dropout 0.1 --epochs 100  --num-layers 4 --num-heads 8 --dim-model 512 --dim-key 64 --dim-value 64 --dim-input 161 --dim-inner 2048 --dim-emb 512 --shuffle --min-lr 1e-6 --k-lr 1
+
+
+
+
+
+
+
+
+Overfit RUN:
+python train.py --name ne_np_female_model_40_epoch --train-manifest-list ./ne_np_female_train_manifest.csv --valid-manifest-list ./ne_np_female_train_manifest.csv --test-manifest-list ./ne_np_female_train_manifest.csv --batch-size 12 --labels-path data/labels/nepali_labels_1.json --lr 1e-3 --name ne_np_female_speech_model --save-folder ./save_ne_np_female --save-every 5 --feat_extractor vgg_cnn --dropout 0.1 --epochs 40  --num-layers 4 --num-heads 8 --dim-model 512 --dim-key 64 --dim-value 64 --dim-input 161 --dim-inner 2048 --dim-emb 512 --shuffle --min-lr 1e-6 --k-lr 1
+
+
+
+
+
+#python test.py --test-manifest-list libri_test_clean_manifest.csv --continue_from save/model
+
+
+python test.py --test-manifest-list nepali_test_clean_manifest.csv --continue-from save_1/nepali_speech_model/best_model.th
+
+
+python test.py --test-manifest-list nepali_test_clean_manifest.csv --epochs 5  --continue-from save_1/nepali_speech_model/best_model.th
+
+
+CUDA RUN-
+
+CUDA_VISIBLE_DEVICES=0,1 python train.py --name ne_np_female_model_40_epoch --train-manifest-list ./ne_np_female_train_manifest.csv --valid-manifest-list ./ne_np_female_val_manifest.csv --test-manifest-list ./ne_np_female_test_manifest.csv --cuda --batch-size 12 --labels-path data/labels/nepali_labels_1.json --lr 1e-3 --name ne_np_female_speech_model --save-folder ./save_ne_np_female --save-every 5 --feat_extractor vgg_cnn --dropout 0.1 --epochs 40  --num-layers 4 --num-heads 8 --dim-model 512 --dim-key 64 --dim-value 64 --dim-input 161 --dim-inner 2048 --dim-emb 512 --shuffle --min-lr 1e-6 --k-lr 1 --parallel --device-ids 0 1
